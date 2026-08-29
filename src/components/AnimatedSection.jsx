@@ -1,18 +1,32 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
-export default function AnimatedSection({ as = "section", className = "", children, delay = 0, id }) {
-  const reduceMotion = useReducedMotion();
-  const MotionTag = motion[as] || motion.section;
+export default function AnimatedSection({
+  children,
+  className = "",
+  id,
+}) {
   return (
-    <MotionTag
+    <motion.section
       id={id}
       className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
-      whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{
+        opacity: 0,
+        y: 28,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.12,
+      }}
+      transition={{
+        duration: 0.65,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
     >
       {children}
-    </MotionTag>
+    </motion.section>
   );
 }
