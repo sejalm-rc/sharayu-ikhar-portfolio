@@ -222,7 +222,7 @@ export default function Home() {
       </p>
 
       {/* Hero Heading */}
-      <h1 className="mt-3 font-[Georgia,serif] text-[clamp(38px,4.2vw,76px)] font-normal leading-[1.02] tracking-[-0.035em] text-[#09243b] md:mt-4">
+      <h1 className="mt-3 font-[Georgia,serif] text-[38px] sm:text-[42px] lg:text-[46px] font-normal leading-[1.02] tracking-[-0.035em] text-[#09243b] md:mt-4">
         Shaping Ideas Into
         <br />
         Meaningful Impact
