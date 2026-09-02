@@ -144,7 +144,7 @@ const workItems = [
 function Container({ children, className = "" }) {
   return (
     <div
-      className={`mx-auto w-full max-w-[1180px] px-5 sm:px-7 lg:px-8 ${className}`}
+      className={`mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8 ${className}`}
     >
       {children}
     </div>
@@ -155,10 +155,10 @@ function Reveal({ children, className = "", delay = 0 }) {
   const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.16 }}
-      transition={{ duration: 0.58, delay, ease: "easeOut" }}
+      initial={reduceMotion ? false : { opacity: 0, y: 28, scale: 0.985 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -45px" }}
+      transition={{ duration: 0.62, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -188,11 +188,11 @@ export default function Home() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <main className="overflow-hidden bg-[#fbfaf7] text-[#102d42]">
+    <main className="overflow-x-hidden bg-[#fbfaf7] text-[#102d42]">
     {/* ==================== HERO SECTION ==================== */}
 <section
   id="home"
-  className="relative min-h-[520px] overflow-hidden bg-[#f8f5ef] bg-[length:auto_42%] bg-[position:72%_top] bg-no-repeat sm:min-h-[680px] sm:bg-[length:auto_48%] md:min-h-[520px] md:bg-cover md:bg-center lg:min-h-[550px]"
+  className="relative min-h-[620px] overflow-hidden bg-[#f8f5ef] bg-[length:auto_42%] bg-[position:72%_top] bg-no-repeat min-[420px]:bg-[length:auto_46%] sm:min-h-[680px] sm:bg-[length:auto_48%] md:min-h-[520px] md:bg-cover md:bg-center lg:min-h-[550px]"
   style={{
     backgroundImage: homeBg ? `url(${homeBg})` : "none",
   }}
@@ -210,7 +210,7 @@ export default function Home() {
       initial={reduceMotion ? false : { opacity: 0, x: -28 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.72, ease: "easeOut" }}
-      className="w-full max-w-[600px] md:w-[49%]"
+      className="w-full max-w-[600px] md:w-[49%] md:max-w-[560px]"
     >
       {/* Hero Eyebrow */}
       <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#bd6448] sm:text-[12px]">
@@ -237,19 +237,21 @@ export default function Home() {
 
       {/* Hero Buttons */}
       <div className="mt-6 flex flex-col gap-3 min-[420px]:flex-row sm:gap-4">
-        <a
+        <motion.a
           href="#work"
+          whileTap={reduceMotion ? undefined : { scale: 0.97 }}
           className="inline-flex min-h-11 items-center justify-center rounded-[3px] bg-[#062b49] px-7 text-[13px] font-medium text-white shadow-[0_8px_20px_rgba(6,43,73,.12)] transition duration-300 hover:-translate-y-1 hover:bg-[#0b3d61] hover:shadow-[0_12px_25px_rgba(6,43,73,.22)]"
         >
           Explore My Work
-        </a>
+        </motion.a>
 
-        <a
+        <motion.a
           href="#publication"
+          whileTap={reduceMotion ? undefined : { scale: 0.97 }}
           className="inline-flex min-h-11 items-center justify-center rounded-[3px] border border-[#173b58] bg-white/55 px-7 text-[13px] font-medium text-[#16334b] transition duration-300 hover:-translate-y-1 hover:bg-[#16334b] hover:text-white hover:shadow-[0_12px_25px_rgba(6,43,73,.14)]"
         >
           View Publications
-        </a>
+        </motion.a>
       </div>
 
       {/* Social Icons */}
@@ -311,7 +313,8 @@ export default function Home() {
       border
       border-[#e2e5df]
       bg-[#eef1ec]
-      grid-cols-2
+      grid-cols-1
+      min-[440px]:grid-cols-2
       lg:grid-cols-4
     "
   >
@@ -320,7 +323,7 @@ export default function Home() {
       className="
         group
         flex
-        h-[75px]
+        min-h-[75px]
         items-center
         justify-center
         gap-3
@@ -333,6 +336,7 @@ export default function Home() {
         hover:-translate-y-1
         hover:bg-white
         hover:shadow-[0_8px_20px_rgba(18,45,62,0.10)]
+        min-[440px]:border-r
         lg:h-[80px]
         lg:border-b-0
         lg:border-r
@@ -364,7 +368,8 @@ export default function Home() {
           font-[Arial,sans-serif]
           text-[12px]
           font-medium
-          leading-none
+          leading-[1.25]
+          text-center
           text-[#243d4c]
           transition-colors
           duration-300
@@ -381,7 +386,7 @@ export default function Home() {
       className="
         group
         flex
-        h-[75px]
+        min-h-[75px]
         items-center
         justify-center
         gap-3
@@ -425,7 +430,8 @@ export default function Home() {
           font-[Arial,sans-serif]
           text-[12px]
           font-medium
-          leading-none
+          leading-[1.25]
+          text-center
           text-[#243d4c]
           transition-colors
           duration-300
@@ -442,17 +448,21 @@ export default function Home() {
       className="
         group
         flex
-        h-[75px]
+        min-h-[75px]
         items-center
         justify-center
         gap-3
         px-4
+        border-b
+        border-[#d9ded8]
         transition-all
         duration-300
         ease-out
         hover:-translate-y-1
         hover:bg-white
         hover:shadow-[0_8px_20px_rgba(18,45,62,0.10)]
+        min-[440px]:border-b-0
+        min-[440px]:border-r
         lg:h-[80px]
         lg:border-r
       "
@@ -483,7 +493,8 @@ export default function Home() {
           font-[Arial,sans-serif]
           text-[12px]
           font-medium
-          leading-none
+          leading-[1.25]
+          text-center
           text-[#243d4c]
           transition-colors
           duration-300
@@ -500,7 +511,7 @@ export default function Home() {
       className="
         group
         flex
-        h-[75px]
+        min-h-[75px]
         items-center
         justify-center
         gap-3
@@ -540,7 +551,8 @@ export default function Home() {
           font-[Arial,sans-serif]
           text-[12px]
           font-medium
-          leading-none
+          leading-[1.25]
+          text-center
           text-[#243d4c]
           transition-colors
           duration-300
@@ -556,7 +568,7 @@ export default function Home() {
 
 
     {/* ================= ABOUT CONTENT ================= */}
-    <div className="mt-7 grid items-center gap-5 md:grid-cols-[0.9fr_1.1fr] md:gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:gap-9">
+    <div className="mt-7 grid items-center gap-6 sm:mt-8 md:grid-cols-[0.9fr_1.1fr] md:gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:gap-9">
 
       {/* ================= IMAGE ================= */}
       <Reveal>
@@ -573,7 +585,8 @@ export default function Home() {
               duration-700
               ease-out
               group-hover:scale-[1.03]
-              sm:h-[230px]
+              min-[480px]:h-[250px]
+              sm:h-[280px]
               md:h-[205px]
               lg:h-[260px]
             "
@@ -587,7 +600,7 @@ export default function Home() {
 
       {/* ================= ABOUT TEXT ================= */}
       <Reveal delay={0.08}>
-        <div className="max-w-[500px] -mt-12">
+        <div className="max-w-[500px] md:-mt-8 lg:-mt-12">
 
           {/* Eyebrow */}
           <p className="text-[10px] font-[550] uppercase tracking-[0.22em] text-[#bd6448] sm:text-[11px]">
@@ -636,7 +649,7 @@ export default function Home() {
   </Container>
 </section>
 
-     
+
 
      {/* ==================== AREAS OF FOCUS ==================== */}
 <section
@@ -674,7 +687,7 @@ export default function Home() {
     </Reveal>
 
     {/* Focus Cards */}
-    <div className="mt-4 grid gap-3 md:grid-cols-3 sm:mt-4">
+    <div className="mt-4 grid gap-3 sm:mt-4 sm:grid-cols-2 lg:grid-cols-3">
       {focusItems.map((item, index) => {
         const FocusIcon = item.icon;
 
@@ -682,6 +695,7 @@ export default function Home() {
           <Reveal
             key={item.title}
             delay={index * 0.08}
+            className={index === focusItems.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}
           >
             <motion.article
               whileHover={{
@@ -693,7 +707,7 @@ export default function Home() {
                 flex
                 min-h-[115px]
                 items-center
-                gap-4
+                gap-3
                 rounded-[6px]
                 border
                 border-[#ddd8cc]
@@ -707,6 +721,7 @@ export default function Home() {
                 hover:bg-white
                 hover:shadow-[0_10px_25px_rgba(18,45,62,0.08)]
                 sm:min-h-[128px]
+                sm:gap-4
                 sm:px-5
               "
             >
@@ -781,7 +796,7 @@ export default function Home() {
 {/* ==================== SELECTED WORK SECTION ==================== */}
 <section
   id="work"
-  className="bg-[#faf9f6] pb-12 mt-6  sm:pb-16"
+  className="mt-6 bg-[#faf9f6] pb-12 sm:pb-16"
 >
   <Container>
 
@@ -818,11 +833,12 @@ export default function Home() {
 
 
     {/* Work Cards */}
-    <div className="mt-3 grid gap-4 md:grid-cols-3 sm:mt-4">
+    <div className="mt-3 grid gap-4 sm:mt-4 sm:grid-cols-2 lg:grid-cols-3">
       {workItems.map((item, index) => (
         <Reveal
           key={item.title}
           delay={index * 0.07}
+          className={index === workItems.length - 1 ? "sm:col-span-2 lg:col-span-1" : ""}
         >
           <motion.article
             whileHover={{
@@ -846,7 +862,7 @@ export default function Home() {
           >
 
             {/* ================= IMAGE ================= */}
-            <div className="relative h-[158px] overflow-hidden sm:h-[168px]">
+            <div className="relative h-[180px] overflow-hidden sm:h-[168px] lg:h-[178px]">
               <img
                 src={item.image}
                 alt={item.title}
@@ -998,18 +1014,18 @@ export default function Home() {
               mt-2
               grid
               min-h-[200px]
-              grid-cols-[148px_1fr]
+              grid-cols-1
               overflow-hidden
               border
               border-[#e1ddd5]
               bg-white
-              sm:grid-cols-[148px_1fr]
+              min-[440px]:grid-cols-[148px_1fr]
               lg:grid-cols-[148px_1fr]
             "
           >
 
             {/* Publication Cover */}
-            <div className="flex items-center justify-center p-1">
+            <div className="flex items-center justify-center p-3 min-[440px]:p-1">
               <motion.img
                 whileHover={{
                   y: -5,
@@ -1041,8 +1057,12 @@ export default function Home() {
                 flex
                 flex-col
                 justify-center
+                items-center
                 px-4
                 py-4
+                text-center
+                min-[440px]:items-start
+                min-[440px]:text-left
                 sm:px-5
                 lg:px-5
               "
@@ -1129,19 +1149,22 @@ export default function Home() {
                 group
                 flex
                 min-h-[64px]
-                items-center
-                gap-4
+                items-start
+                gap-3
                 rounded-[5px]
                 border
                 border-[#e1ddd5]
                 bg-white
-                px-4
+                px-3
                 py-2
                 transition-all
                 duration-300
                 hover:border-[#d2bd8d]
                 hover:bg-[#fffdf8]
                 hover:shadow-[0_5px_14px_rgba(18,45,62,0.06)]
+                min-[440px]:items-center
+                min-[440px]:gap-4
+                min-[440px]:px-4
               "
             >
               {/* Medal */}
@@ -1171,7 +1194,7 @@ export default function Home() {
               </span>
 
               {/* Text */}
-              <div>
+              <div className="min-w-0">
                 <h3
                   className="
                     font-[Georgia,serif]
@@ -1209,19 +1232,22 @@ export default function Home() {
                 group
                 flex
                 min-h-[64px]
-                items-center
-                gap-4
+                items-start
+                gap-3
                 rounded-[5px]
                 border
                 border-[#e1ddd5]
                 bg-white
-                px-4
+                px-3
                 py-2
                 transition-all
                 duration-300
                 hover:border-[#d2bd8d]
                 hover:bg-[#fffdf8]
                 hover:shadow-[0_5px_14px_rgba(18,45,62,0.06)]
+                min-[440px]:items-center
+                min-[440px]:gap-4
+                min-[440px]:px-4
               "
             >
               {/* Medal */}
@@ -1251,7 +1277,7 @@ export default function Home() {
               </span>
 
               {/* Text */}
-              <div>
+              <div className="min-w-0">
                 <h3
                   className="
                     font-[Georgia,serif]
@@ -1289,19 +1315,22 @@ export default function Home() {
                 group
                 flex
                 min-h-[64px]
-                items-center
-                gap-4
+                items-start
+                gap-3
                 rounded-[5px]
                 border
                 border-[#e1ddd5]
                 bg-white
-                px-4
+                px-3
                 py-2
                 transition-all
                 duration-300
                 hover:border-[#d2bd8d]
                 hover:bg-[#fffdf8]
                 hover:shadow-[0_5px_14px_rgba(18,45,62,0.06)]
+                min-[440px]:items-center
+                min-[440px]:gap-4
+                min-[440px]:px-4
               "
             >
               {/* Medal */}
@@ -1331,7 +1360,7 @@ export default function Home() {
               </span>
 
               {/* Text */}
-              <div>
+              <div className="min-w-0">
                 <h3
                   className="
                     font-[Georgia,serif]
@@ -1369,45 +1398,51 @@ export default function Home() {
   </Container>
 </section>
 
+{/* ==================== CTA SECTION ==================== */}
+<div className="px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+  <section
+    id="contact"
+    className="group relative isolate mx-auto max-w-[1120px] overflow-hidden rounded-[10px] border border-white/20 bg-[#D16F4A] text-white shadow-[0_12px_35px_rgba(111,55,34,0.14)] sm:bg-[#d57450]"
+  >
+    {/* Background image hidden on mobile */}
+    <div
+      className="absolute inset-0 z-0 hidden bg-cover bg-center bg-no-repeat sm:block"
+      style={{
+        backgroundImage: `url(${cta})`,
+      }}
+    />
 
-     {/* ==================== CTA SECTION ==================== */}
-<section
-  id="contact"
-  className="group relative isolate overflow-hidden border-y border-white/20 bg-[#d57450] bg-cover bg-center bg-no-repeat text-white"
-  style={{
-    backgroundImage: `url(${cta})`,
-  }}
->
-  
-  {/* Soft orange overlay */}
-  <div className="absolute inset-0 -z-10 bg-[#c96543]/20 transition-colors duration-500 group-hover:bg-[#bd5c3c]/30" />
+    {/* Soft orange overlay—desktop only */}
+    <div className="absolute inset-0 z-[1] hidden bg-[#c96543]/20 transition-colors duration-500 sm:block sm:group-hover:bg-[#bd5c3c]/30" />
 
-  {/* Subtle center gradient */}
-  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#c96646]/15 via-transparent to-[#c96646]/10" />
+    {/* Center gradient—desktop only */}
+    <div className="absolute inset-0 z-[1] hidden bg-gradient-to-r from-[#c96646]/15 via-transparent to-[#c96646]/10 sm:block" />
 
-  <Container className="relative z-10 flex min-h-[88px] flex-col items-center justify-center gap-5 px-5 py-5 text-center sm:px-6 md:flex-row md:justify-between md:gap-10 md:py-0 md:text-left">
-    <Reveal>
-      <h2 className="font-[Georgia,serif] text-[25px] font-normal leading-[1.2] tracking-[-0.02em] text-white drop-shadow-[0_2px_2px_rgba(86,40,25,0.3)] sm:text-[28px] lg:text-[30px]">
-        Let&apos;s Create Meaningful Impact Together
-      </h2>
-    </Reveal>
+    <div className="relative z-10 mx-auto flex min-h-[88px] w-full flex-col items-center justify-center gap-5 px-5 py-6 text-center sm:px-8 md:flex-row md:justify-between md:gap-10 md:px-10 md:py-0 md:text-left">
+      <Reveal>
+        <h2 className="font-[Georgia,serif] text-[25px] font-normal leading-[1.2] tracking-[-0.02em] text-white drop-shadow-[0_2px_2px_rgba(86,40,25,0.3)] sm:text-[28px] lg:text-[30px]">
+          Let&apos;s Create Meaningful Impact Together
+        </h2>
+      </Reveal>
 
-    <Reveal delay={0.08}>
-      <a
-        href="mailto:sharyu.ikhar@researcherconnect.co.in"
-        className="group/button inline-flex min-h-[44px] shrink-0 items-center justify-center gap-2.5 rounded-[4px] border border-white/70 bg-white px-7 py-3 text-[13px] font-medium text-[#34404d] shadow-[0_5px_12px_rgba(80,38,24,0.20)] transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-[#fffaf6] hover:text-[#bd603f] hover:shadow-[0_10px_22px_rgba(80,38,24,0.28)] focus:outline-none focus:ring-2 focus:ring-white/80 focus:ring-offset-2 focus:ring-offset-[#d57450]"
-      >
-        Start a Conversation
+      <Reveal delay={0.08}>
+        <motion.a
+          href="mailto:sharyu.ikhar@researcherconnect.co.in"
+          whileTap={reduceMotion ? undefined : { scale: 0.97 }}
+          className="group/button inline-flex min-h-[36px] w-full shrink-0 items-center justify-center gap-2.5 rounded-[4px] border border-white/70 bg-white px-5 py-2 text-[12px] font-medium text-[#34404d] shadow-[0_5px_12px_rgba(80,38,24,0.20)] transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-[#fffaf6] hover:text-[#bd603f] hover:shadow-[0_10px_22px_rgba(80,38,24,0.28)] focus:outline-none focus:ring-2 focus:ring-white/80 focus:ring-offset-2 focus:ring-offset-[#D16F4A] sm:focus:ring-offset-[#d57450] min-[420px]:w-auto"
+        >
+          Start a Conversation
 
-        <ArrowRight
-          size={15}
-          strokeWidth={1.8}
-          className="transition-transform duration-300 group-hover/button:translate-x-1"
-        />
-      </a>
-    </Reveal>
-  </Container>
-</section>
+          <ArrowRight
+            size={15}
+            strokeWidth={1.8}
+            className="transition-transform duration-300 group-hover/button:translate-x-1"
+          />
+        </motion.a>
+      </Reveal>
+    </div>
+  </section>
+</div>
     </main>
   );
 }
