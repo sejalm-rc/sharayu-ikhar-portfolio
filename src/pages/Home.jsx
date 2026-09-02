@@ -299,7 +299,7 @@ export default function Home() {
       {/* ==================== ABOUT SECTION ==================== */}
 <section
   id="about"
-  className="border-b border-[#e6e2db] bg-[#faf9f6] py-5 sm:py-6"
+  className="bg-[#faf9f6] py-5 sm:py-6"
 >
   <Container className="max-w-[1180px]">
 
@@ -796,7 +796,7 @@ export default function Home() {
 {/* ==================== SELECTED WORK SECTION ==================== */}
 <section
   id="work"
-  className="mt-6 bg-[#faf9f6] pb-12 sm:pb-16"
+  className="mt-6 bg-[#faf9f6] pb-5 sm:pb-5"
 >
   <Container>
 
@@ -966,7 +966,7 @@ export default function Home() {
      {/* ==================== FEATURED PUBLICATION + ACHIEVEMENTS ==================== */}
 <section
   id="publication"
-  className="border-y border-[#e5e1da] bg-[#faf9f6] py-4 sm:py-4 lg:py-4"
+  className="bg-[#faf9f6] py-4 sm:py-4 lg:py-4"
 >
   <Container>
     <div className="grid gap-4 lg:grid-cols-2">
