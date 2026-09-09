@@ -28,6 +28,7 @@ import AnimatedSection from "../components/AnimatedSection";
 
 import heroResearch from "../assets/images/img/bgreaserch.png";
 
+
 import areaInnovation from "../assets/images/img/r1.png";
 import areaManagement from "../assets/images/img/r2.png";
 import areaEducation from "../assets/images/img/r3.png";
@@ -257,469 +258,376 @@ export default function Research() {
           HERO SECTION
       ====================================================== */}
 
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.65,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        className="
-          group
-          relative
-          w-full
-          overflow-hidden
-          bg-[#faf7f1]
-
-          min-h-[560px]
-          sm:min-h-[580px]
-          md:min-h-[490px]
-          lg:min-h-[460px]
-          xl:min-h-[480px]
-        "
-      >
-        {/* FULL HERO BACKGROUND IMAGE */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: 1.02,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="
-            absolute
-            inset-0
-            h-full
-            w-full
-
-            bg-cover
-            bg-[70%_center]
-            bg-no-repeat
-
-            transition-transform
-            duration-[1200ms]
-            ease-out
-
-            group-hover:scale-[1.008]
-
-            sm:bg-[68%_center]
-            md:bg-[64%_center]
-            lg:bg-center
-          "
-          style={{
-            backgroundImage: `url(${heroResearch})`,
-          }}
-        />
-
-        {/* MOBILE READABILITY */}
-
-        <div
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-
-            bg-gradient-to-r
-            from-[#faf7f1]
-            via-[#faf7f1]/95
-            to-[#faf7f1]/35
-
-            sm:via-[#faf7f1]/88
-            sm:to-transparent
-
-            md:from-[#faf7f1]/65
-            md:via-[#faf7f1]/30
-
-            lg:from-transparent
-            lg:via-transparent
-            lg:to-transparent
-          "
-        />
-
-        {/* SAME CONTAINER */}
-
-        <div
-          className={`
-            ${pageContainer}
-
-            relative
-            z-10
-            flex
-
-            min-h-[560px]
-            items-start
-
-            pt-9
-
-            sm:min-h-[580px]
-            sm:pt-10
-
-            md:min-h-[490px]
-            md:items-center
-            md:pt-0
-
-            lg:min-h-[460px]
-
-            xl:min-h-[480px]
-          `}
-        >
-          {/* LEFT CONTENT */}
-
-          <div
-            className="
-              w-full
-              max-w-[470px]
-
-              md:w-[47%]
-              md:max-w-[440px]
-
-              lg:w-[42%]
-              lg:max-w-[430px]
-            "
-          >
-            {/* BREADCRUMB */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: -8,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 0.1,
-              }}
-              className="
-                mb-7
-                flex
-                items-center
-                gap-2
-
-                text-[10px]
-                font-medium
-                text-[#747e82]
-
-                sm:text-[11px]
-              "
+         <motion.section
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="group relative w-full overflow-hidden bg-[#f7f3ec]"
             >
-              <Link
-                to="/"
-                className="
-                  transition-colors
-                  duration-300
-                  hover:text-[#c66f4e]
-                "
-              >
-                Home
-              </Link>
-
-              <span>/</span>
-
-              <span className="text-[#173c50]">
-                Research
-              </span>
-            </motion.div>
-
-            {/* EYEBROW */}
-
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 12,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.55,
-                delay: 0.18,
-              }}
-              className="
-                mb-3
-
-                text-[10px]
-                font-bold
-                uppercase
-                tracking-[0.22em]
-
-                text-[#c66f4e]
-
-                sm:text-[11px]
-              "
-            >
-              Research &amp; Innovation
-            </motion.p>
-
-            {/* HEADING */}
-
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 18,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.25,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="
-                max-w-[440px]
-
-                font-serif
-                text-[39px]
-                font-medium
-                leading-[1.04]
-                tracking-[-0.025em]
-
-                text-[#173c50]
-
-                sm:text-[46px]
-
-                md:text-[43px]
-
-                lg:text-[48px]
-              "
-            >
-              Research That
-              <span className="block">
-                Moves Ideas Forward
-              </span>
-            </motion.h1>
-
-            {/* DESCRIPTION */}
-
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 15,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.36,
-              }}
-              className="
-                mt-5
-                max-w-[390px]
-
-                text-[12px]
-                leading-[1.7]
-
-                text-[#536166]
-
-                sm:text-[13px]
-
-                lg:max-w-[360px]
-              "
-            >
-              Exploring practical ideas, collaborative inquiry, and
-              evidence-led strategies that strengthen organizations and
-              create lasting impact.
-            </motion.p>
-
-            {/* BUTTON */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 14,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.46,
-              }}
-              className="mt-6"
-            >
-              <motion.a
-                href="#areas"
-                whileHover={{
-                  y: -3,
+              {/* =====================================================
+                FULL SECTION BACKGROUND IMAGE
+                ===================================================== */}
+              <motion.div
+                initial={{ scale: 1.015 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0 h-full w-full bg-cover bg-[72%_center] bg-no-repeat
+                         transition-transform duration-[1200ms] ease-out
+                         group-hover:scale-[1.008]
+                         sm:bg-[68%_center]
+                         md:bg-[64%_center]
+                         lg:bg-center"
+                style={{
+                  backgroundImage: `url(${heroResearch})`,
                 }}
-                whileTap={{
-                  scale: 0.98,
-                }}
-                className="
-                  group/button
-
-                  inline-flex
-                  min-h-[40px]
-                  items-center
-                  justify-center
-                  gap-2
-
-                  rounded-[4px]
-
-                  border
-                  border-[#173c50]/60
-
-                  bg-white/85
-
-                  px-5
-                  py-[10px]
-
-                  text-[11px]
-                  font-semibold
-                  text-[#173c50]
-
-                  shadow-[0_2px_7px_rgba(23,60,80,0.06)]
-
-                  backdrop-blur-[2px]
-
-                  transition-all
-                  duration-300
-
-                  hover:border-[#c66f4e]
-
-                  hover:bg-gradient-to-r
-                  hover:from-[#c56446]
-                  hover:via-[#d07855]
-                  hover:to-[#bb583d]
-
-                  hover:text-white
-
-                  hover:shadow-[0_9px_22px_rgba(198,111,78,0.22)]
-                "
+              />
+      
+              {/* =====================================================
+                MOBILE / TABLET READABILITY GRADIENT
+      
+                On desktop this is almost transparent because
+                the original background already contains its gradient.
+                ===================================================== */}
+              <div
+                className="pointer-events-none absolute inset-0
+                         bg-gradient-to-r
+                         from-[#f8f4ed]/100
+                         via-[#f8f4ed]/95
+                         to-[#f8f4ed]/30
+                         
+                         sm:via-[#f8f4ed]/90
+                         sm:to-transparent
+      
+                         lg:from-[#f8f4ed]/5
+                         lg:via-transparent
+                         lg:to-transparent"
+              />
+      
+              {/* =====================================================
+                CONTENT WIDTH
+                Reference image ratio ≈ 1040 x 366
+                ===================================================== */}
+              <div
+                className={`${pageContainer} relative z-10 flex
+          min-h-[500px] items-center
+          sm:min-h-[500px]
+          md:min-h-[470px]
+          lg:min-h-[430px]
+          xl:min-h-[450px]`}
               >
-                Explore Research Areas
+                {/* ===================================================
+                  LEFT TEXT CONTENT
+                  =================================================== */}
+                <div
+                  className="w-full max-w-[550px]
+                           py-8
+                           sm:py-10
+                           md:max-w-[500px]
+                           lg:w-[45%]
+                           lg:py-10"
+                >
+                  {/* Breadcrumb */}
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.55, delay: 0.12 }}
+                    className="mb-5 flex items-center gap-[7px]
+                             text-[13px] font-medium
+                             tracking-[0.01em] text-[#757d80]
+                             sm:mb-6"
+                  >
+                    <Link
+                      to="/"
+                      className="transition-colors duration-300
+                               hover:text-[#c66f4e]"
+                    >
+                      Home
+                    </Link>
+      
+                    <span className="text-[#9ca2a3]">/</span>
+      
+                    <span className="text-[#173c50]">Research</span>
+                  </motion.div>
+      
+                  {/* Small Heading */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="mb-[14px]
+                             text-[13px] font-bold uppercase
+                             tracking-[0.15em] text-[#c66f4e]
+                             sm:text-[14px]"
+                  >
+                  Research & Innovation
+                  </motion.p>
+      
+                  {/* Main Heading */}
+                  <motion.h1
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.7,
+                      delay: 0.28,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="max-w-[480px]
+                             font-serif
+                             text-[40px]
+                             font-medium
+                             leading-[1.04]
+                             tracking-[-0.025em]
+                             text-[#173c50]
+      
+                             min-[420px]:text-[46px]
+      
+                             sm:text-42px]
+                             sm:leading-[1.01]
+      
+                             md:text-[44px]
+      
+                             lg:text-[44px]"
+                  >
+                    Research That
 
-                <ArrowRight
-                  size={13}
-                  className="
-                    transition-transform
-                    duration-300
+                    <span className="block">Moves Ideas Forward</span>
+                  </motion.h1>
+      
+                  {/* Description */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.65, delay: 0.4 }}
+                    className="mt-4 max-w-[400px]
+                             text-[14px]
+                             leading-[1.7]
+                             text-[#252a2c]
+      
+                             sm:mt-5
+                             sm:text-[14px]
+                             sm:leading-[1.75]
+      
+                             lg:max-w-[350px]
+                             lg:text-[15px]"
+                  >
+                   Exploring practical ideas, collaborative inquiry, and evidence-led strategies that strengthen organizations and create lasting impact.
+                  </motion.p>
+      
+                  {/* CTA */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    className="mt-7"
+                  >
+                    <motion.a
+                      href="#journey"
+                      whileHover={{ y: -3 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="group/button inline-flex
+                               min-h-[37px]
+                               items-center justify-center
+                               gap-2
+                               rounded-[6px]
+                               border hover:border-[#374e5c]
+                               hover:bg-white/90
+                               px-[21px]
+                               py-[10px]
+                               text-[13px]
+                               font-semibold
+                               hover:text-[#0b1c25]
+                               shadow-[0_1px_2px_rgba(23,60,80,0.08)]
+                               backdrop-blur-[2px]
+                               transition-all
+                               duration-300
+      
+                               border-[#c66f4e]
+                               bg-[#c66f4e]
+                               text-white
+                               hover:shadow-[0_8px_20px_rgba(198,111,78,0.20)]
+      
+                               sm:px-6
+                               sm:py-[9px]"
+                    >
+                      <span>  Explore Research Areas</span>
+      
+                      <ArrowRight
+                        strokeWidth={1.7}
+                        className="h-[13px] w-[13px]
+                                 transition-transform duration-300
+                                 group-hover/button:translate-x-[3px]"
+                      />
+                    </motion.a>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.section>
 
-                    group-hover/button:translate-x-1
-                  "
-                />
-              </motion.a>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
+    
 
       {/* =====================================================
           RESEARCH VISION
       ====================================================== */}
 
-      <AnimatedSection className="py-10 sm:py-12 lg:py-[46px]">
-        <div className={pageContainer}>
-          <h2
-            className="
-              text-center
-              font-serif
-              text-[27px]
-              font-medium
-              text-[#173c50]
+   <AnimatedSection
+  className="
+    bg-[#fffdf9]
+    py-[14px]
+    sm:py-[18px]
+    lg:py-[14px]
+  "
+>
+  <div
+    className="
+      mx-auto
+      w-[calc(100%-40px)]
+      max-w-[1300px]
 
-              sm:text-[30px]
-              lg:text-[32px]
-            "
-          >
-            Research Vision
-          </h2>
+      sm:w-[calc(100%-64px)]
+      lg:w-[calc(100%-100px)]
+      xl:w-[calc(100%-120px)]
+    "
+  >
+    {/* ================= HEADING ================= */}
+    <h2
+      className="
+        text-center
+        font-serif
+        text-[26px]
+        font-medium
+        leading-none
+        text-[#17384d]
 
-          <div
-            className="
-              mt-7
-              grid
-              gap-8
+        sm:text-[28px]
+        lg:text-[31px]
+      "
+    >
+      Research Vision
+    </h2>
 
-              md:grid-cols-[1fr_0.75fr_1fr]
-              md:items-center
+    {/* ================= CONTENT ================= */}
+    <div
+      className="
+        mt-[30px]
+        grid
+        grid-cols-1
+        gap-8
 
-              lg:gap-[55px]
-            "
-          >
-            <p
-              className="
-                text-[11px]
-                leading-[1.75]
-                text-[#58676c]
+        md:grid-cols-[1.12fr_0.82fr_1.12fr]
+        md:items-start
+        md:gap-[44px]
 
-                sm:text-[12px]
-              "
-            >
-              My research connects inquiry with leadership and organizational
-              strategy. I explore how research can inform better decisions,
-              strengthen systems, and support innovation in complex
-              environments.
-            </p>
+        lg:mt-[32px]
+        lg:gap-[58px]
 
-            <blockquote
-              className="
-                relative
-                border-b
-                border-[#d5aa69]
+        xl:gap-[66px]
+      "
+    >
+      {/* LEFT TEXT */}
+      <div className="md:pt-[2px]">
+        <p
+          className="
+            m-0
+            text-[11px]
+            font-normal
+            leading-[1.85]
+            text-[#58656b]
 
-                pb-4
-                text-center
+            sm:text-[11.5px]
+            lg:text-[12px]
+          "
+        >
+          My research connects inquiry with leadership and organizational
+          strategy. I explore how research can inform better decisions,
+          strengthen systems, and support innovation in complex environments.
+        </p>
+      </div>
 
-                font-serif
-                text-[18px]
-                font-medium
-                leading-[1.45]
+      {/* CENTER QUOTE */}
+      <div
+        className="
+          relative
+          mx-auto
+          w-full
+          max-w-[310px]
+          pb-[22px]
 
-                text-[#173c50]
+          md:-mt-[1px]
+        "
+      >
+        <span
+          aria-hidden="true"
+          className="
+            absolute
+            -left-[23px]
+            -top-[13px]
+            font-serif
+            text-[52px]
+            font-bold
+            leading-none
+            text-[#c99748]
 
-                sm:text-[20px]
-              "
-            >
-              <span
-                className="
-                  absolute
-                  -left-1
-                  -top-5
+            lg:-left-[28px]
+            lg:text-[56px]
+          "
+        >
+          “
+        </span>
 
-                  text-[44px]
-                  text-[#c79445]
-                "
-              >
-                “
-              </span>
+        <blockquote
+          className="
+            m-0
+            px-[5px]
+            text-center
+            font-serif
+            text-[18px]
+            font-medium
+            leading-[1.5]
+            text-[#17384d]
 
-              Research becomes meaningful when insight is transformed into
-              action.
-            </blockquote>
+            sm:text-[19px]
+            lg:text-[20px]
+          "
+        >
+          Research becomes meaningful when insight is transformed into action.
+        </blockquote>
 
-            <p
-              className="
-                text-[11px]
-                leading-[1.75]
-                text-[#58676c]
+        {/* Gold line */}
+        <div
+          className="
+            absolute
+            bottom-0
+            left-1/2
+            h-[1.5px]
+            w-[94%]
+            -translate-x-1/2
+            bg-[#d8b77a]
+          "
+        />
+      </div>
 
-                sm:text-[12px]
-              "
-            >
-              I am committed to producing work that is rigorous, relevant,
-              and actionable—bridging theory and practice to drive
-              evidence-led strategies that create meaningful and sustainable
-              impact.
-            </p>
-          </div>
-        </div>
-      </AnimatedSection>
+      {/* RIGHT TEXT */}
+      <div className="md:pt-[2px]">
+        <p
+          className="
+            m-0
+            text-[11px]
+            font-normal
+            leading-[1.85]
+            text-[#58656b]
+
+            sm:text-[11.5px]
+            lg:text-[12px]
+          "
+        >
+          I am committed to producing work that is rigorous, relevant, and
+          actionable—bridging theory and practice to drive evidence-led
+          strategies that create meaningful and sustainable impact.
+        </p>
+      </div>
+    </div>
+  </div>
+</AnimatedSection>
 
       {/* =====================================================
           CORE RESEARCH AREAS
@@ -1724,181 +1632,276 @@ export default function Research() {
         </div>
       </AnimatedSection>
 
-      {/* =====================================================
-          FINAL CTA
+   {/* =====================================================
+          CTA SECTION
       ====================================================== */}
+<AnimatedSection className="bg-[#fffefd] pb-6 pt-2 sm:pb-5">
+  <div className={pageContainer}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{
+        duration: 0.65,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={{ y: -3 }}
+      className="
+        group
+        relative
+        overflow-hidden
+        rounded-[8px]
 
-      <AnimatedSection className="pb-6">
-        <div className={pageContainer}>
-          <motion.div
-            whileHover={{
-              y: -2,
-            }}
-            className="
-              relative
-              overflow-hidden
+        min-h-[155px]
 
-              rounded-[8px]
+        shadow-[0_5px_18px_rgba(80,47,32,0.08)]
 
-              bg-gradient-to-r
-              from-[#b95f43]
-              via-[#cf7554]
-              to-[#c96949]
+        transition-all
+        duration-300
 
-              px-6
-              py-6
+        hover:shadow-[0_14px_32px_rgba(80,47,32,0.15)]
 
-              text-white
+        sm:min-h-[145px]
+        lg:min-h-[128px]
+      "
+    >
+      {/* ===================================================
+          FULL CTA BACKGROUND IMAGE
+      ==================================================== */}
 
-              shadow-[0_7px_20px_rgba(109,55,37,0.12)]
+      <motion.div
+        initial={{ scale: 1.015 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.9,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="
+          absolute
+          inset-0
 
-              sm:px-8
+          h-full
+          w-full
 
-              md:flex
-              md:items-center
-              md:justify-between
-              md:gap-8
+          bg-cover
+          bg-center
+          bg-no-repeat
 
-              lg:px-12
-            "
-          >
-            {/* DECORATIONS */}
+          transition-transform
+          duration-700
 
-            <Sprout
-              size={130}
-              strokeWidth={0.55}
+          group-hover:scale-[1.015]
+        "
+        style={{
+          backgroundImage: `url(${cta})`,
+        }}
+      />
+
+      {/* very light overlay only for text readability */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[#c96f4f]/[0.04]
+        "
+      />
+
+      {/* ===================================================
+          CTA CONTENT
+      ==================================================== */}
+
+      <div
+        className="
+          relative
+          z-10
+
+          flex
+          min-h-[155px]
+          flex-col
+          items-center
+          justify-center
+          gap-5
+
+          px-5
+          py-6
+
+          text-center
+
+          sm:min-h-[145px]
+          sm:px-8
+
+          md:flex-row
+          md:justify-between
+          md:text-left
+
+          lg:min-h-[128px]
+          lg:px-[64px]
+          lg:py-[18px]
+
+          xl:px-[76px]
+        "
+      >
+        {/* =================================================
+            LEFT CONTENT
+        ================================================== */}
+
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.6,
+            delay: 0.08,
+          }}
+          className="
+            flex
+            flex-col
+            items-center
+            gap-4
+
+            sm:flex-row
+            sm:text-left
+ml-0  sm:ml-28
+            md:items-center
+
+            lg:gap-[22px]
+          "
+        >
+         
+
+          {/* TEXT */}
+          <div>
+            <h2
               className="
-                pointer-events-none
+                font-serif
 
-                absolute
-                -bottom-6
-                -left-6
+                text-[24px]
+                font-medium
+                leading-[1.1]
+                tracking-[-0.015em]
 
-                rotate-[-25deg]
+                text-white
 
-                text-white/30
-              "
-            />
-
-            <Sprout
-              size={120}
-              strokeWidth={0.55}
-              className="
-                pointer-events-none
-
-                absolute
-                -bottom-5
-                -right-4
-
-                rotate-[28deg]
-
-                text-white/25
-              "
-            />
-
-            {/* CONTENT */}
-
-            <div
-              className="
-                relative
-                z-10
-
-                text-center
-
-                md:text-left
+                sm:text-[27px]
+                lg:text-[30px]
               "
             >
-              <h2
-                className="
-                  font-serif
-                  text-[25px]
-                  font-medium
+           Interested in Research Collaboration?
+            </h2>
 
-                  sm:text-[28px]
-                "
-              >
-                Interested in Research Collaboration?
-              </h2>
-
-              <p
-                className="
-                  mt-1
-
-                  text-[10px]
-                  leading-[1.6]
-
-                  text-white/85
-
-                  sm:text-[11px]
-                "
-              >
-                Let&apos;s connect to explore ideas, share perspectives, and
-                create meaningful impact together.
-              </p>
-            </div>
-
-            {/* BUTTON */}
-
-            <Link
-              to="/contact"
+            <p
               className="
-                group/button
-                relative
-                z-10
-
                 mx-auto
-                mt-5
+                mt-[7px]
+                max-w-[440px]
 
-                inline-flex
-                min-h-[40px]
-                items-center
-                justify-center
-                gap-2
+                text-[12px]
+                font-normal
+                leading-[1.55]
 
-                rounded-[4px]
+                text-white/90
 
-                bg-white
+                sm:mx-0
+                sm:text-[12.5px]
 
-                px-6
-                py-[10px]
-
-                text-[10.5px]
-                font-semibold
-                text-[#173c50]
-
-                shadow-md
-
-                transition-all
-                duration-300
-
-                hover:-translate-y-1
-
-                hover:bg-gradient-to-r
-                hover:from-[#173c50]
-                hover:via-[#244f60]
-                hover:to-[#356a72]
-
-                hover:text-white
-
-                md:mx-0
-                md:mt-0
+                lg:text-[13.5px]
               "
             >
-              Start a Conversation
+             Let's connect to explore ideas, share perspectives, 
+              <span className="hidden sm:inline"> </span>
+              <br className="hidden lg:block" />
+             and create meaningful impact together.
+            </p>
+          </div>
+        </motion.div>
 
-              <ArrowRight
-                size={13}
-                className="
-                  transition-transform
-                  duration-300
+        {/* =================================================
+            CTA BUTTON
+        ================================================== */}
 
-                  group-hover/button:translate-x-1
-                "
-              />
-            </Link>
-          </motion.div>
-        </div>
-      </AnimatedSection>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.6,
+            delay: 0.14,
+          }}
+          className="shrink-0"
+          
+        >
+          <Link
+  to="/contact"
+  className="
+    group/button
+
+    inline-flex
+    min-h-[42px]
+    items-center
+    justify-center
+    gap-2
+mr-6
+    rounded-[4px]
+
+    border
+    border-white/80
+
+    bg-gradient-to-r
+    from-[#fffdf9]
+    via-[#f8f1e9]
+    to-[#f3e5da]
+
+    px-6
+    py-[11px]
+
+    text-[13.5px]
+    font-semibold
+    text-[#173c50]
+
+    shadow-[0_4px_14px_rgba(72,38,25,0.12)]
+
+    transition-all
+    duration-300
+    ease-out
+
+    hover:-translate-y-[3px]
+
+   
+
+  
+
+
+    hover:shadow-[0_10px_24px_rgba(23,60,80,0.24)]
+
+    active:translate-y-0
+    active:scale-[0.98]
+
+    sm:px-7
+    lg:min-w-[210px]
+  "
+>
+  <span>Start a Conversation</span>
+
+  <ArrowRight
+    size={14}
+    strokeWidth={1.8}
+    className="
+      transition-transform
+      duration-300
+
+      group-hover/button:translate-x-[5px]
+    "
+  />
+</Link>
+        </motion.div>
+      </div>
+    </motion.div>
+  </div>
+</AnimatedSection>
+
+      
 
     </main>
   );

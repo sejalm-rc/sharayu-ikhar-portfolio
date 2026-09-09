@@ -1901,9 +1901,6 @@ text-justify
       {/* =====================================================
           CTA SECTION
       ====================================================== */}
-
-
-
 <AnimatedSection className="bg-[#fffefd] pb-6 pt-2 sm:pb-5">
   <div className={pageContainer}>
     <motion.div
@@ -2139,11 +2136,7 @@ mr-6
 
    
 
-    hover:from-[#173c50]
-    hover:via-[#244f60]
-    hover:to-[#356a72]
 
-    hover:text-white
 
     hover:shadow-[0_10px_24px_rgba(23,60,80,0.24)]
 
