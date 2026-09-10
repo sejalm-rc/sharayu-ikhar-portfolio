@@ -65,7 +65,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#eee8df] bg-[var(--paper)]/95 shadow-[0_4px_18px_rgba(18,43,57,0.04)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#eee8df] bg-white shadow-[0_4px_18px_rgba(18,43,57,0.04)] ">
       <div className="mx-auto flex h-[72px] w-full max-w-[1380px] items-center justify-between gap-5 px-4 sm:h-[78px] sm:px-6 lg:px-8 xl:h-[84px]">
         {/* ==================== LOGO ==================== */}
         <Link
