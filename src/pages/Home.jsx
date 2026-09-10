@@ -1,11 +1,10 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BarChart3,
   Building2,
-  Check,
   ClipboardCheck,
-  Globe2,
   Handshake,
   Lightbulb,
   Network,
@@ -184,6 +183,8 @@ function SectionHeading({ eyebrow, title, center = false }) {
   );
 }
 
+const MotionLink = motion.create(Link);
+
 export default function Home() {
   const reduceMotion = useReducedMotion();
 
@@ -237,13 +238,13 @@ export default function Home() {
 
       {/* Hero Buttons */}
       <div className="mt-6 flex flex-col gap-3 min-[420px]:flex-row sm:gap-4">
-        <motion.a
-          href="#work"
-          whileTap={reduceMotion ? undefined : { scale: 0.97 }}
-          className="inline-flex min-h-11 items-center justify-center rounded-[3px] bg-[#062b49] px-7 text-[13px] font-medium text-white shadow-[0_8px_20px_rgba(6,43,73,.12)] transition duration-300 hover:-translate-y-1 hover:bg-[#0b3d61] hover:shadow-[0_12px_25px_rgba(6,43,73,.22)]"
-        >
-          Explore My Work
-        </motion.a>
+       <MotionLink
+  to="/about"
+  whileTap={reduceMotion ? undefined : { scale: 0.97 }}
+  className="inline-flex min-h-11 items-center justify-center rounded-[3px] bg-[#062b49] px-7 text-[13px] font-medium text-white shadow-[0_8px_20px_rgba(6,43,73,.12)] transition duration-300 hover:-translate-y-1 hover:bg-[#0b3d61] hover:shadow-[0_12px_25px_rgba(6,43,73,.22)]"
+>
+  Explore My Work
+</MotionLink>
 
         <motion.a
           href="#publication"
