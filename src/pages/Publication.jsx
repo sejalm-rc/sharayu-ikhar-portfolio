@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -135,6 +136,43 @@ function SectionTitle({ children, description }) {
 }
 
 export default function Publication() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filteredPublications = useMemo(() => {
+    if (activeFilter === "All") return selectedPublications;
+    return selectedPublications.filter((publication) => publication.type === activeFilter);
+  }, [activeFilter]);
+
+  const scrollToSelectedPublications = (filter = "All") => {
+    setActiveFilter(filter);
+
+    window.requestAnimationFrame(() => {
+      document.getElementById("selected-publications")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
+
+  const handleKeyboardAction = (event, action) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      action();
+    }
+  };
+
+  const showFeaturedAbstract = () => {
+    window.alert(
+      "Building Better Systems Through Research\n\nThis work explores how evidence-based insights can be translated into organizational strategies that strengthen systems, support innovation, and create sustainable impact.",
+    );
+  };
+
+  const showPublicationDetails = (publication) => {
+    window.alert(
+      `${publication.title}\n\nType: ${publication.type}\nPublication details to be updated.`,
+    );
+  };
+
   return (
     <main className="overflow-hidden bg-[#fcfbf8] text-[#243949]">
       {/* HERO */}
@@ -158,7 +196,7 @@ export default function Publication() {
               <br />
               Through Knowledge
             </h1>
-            <p className="mt-5 max-w-[350px]  text-[14] sm:text-[15px] leading- 6text-[#52606c]">
+            <p className="mt-5 max-w-[350px] text-[14px] leading-6 text-[#52606c] sm:text-[15px]">
               A curated space for scholarly contributions, collaborative
               writing, and research-led perspectives that connect insight with
               practice.
@@ -195,13 +233,19 @@ export default function Publication() {
     "
   >
     {[
-      [FileText, "Journal Articles"],
-      [BookOpen, "Book Chapters"],
-      [Presentation, "Conference Papers"],
-      [Feather, "Professional Insights"],
-    ].map(([Icon, title], index) => (
+      [FileText, "Journal Articles", "Articles"],
+      [BookOpen, "Book Chapters", "Chapters"],
+      [Presentation, "Conference Papers", "Conference"],
+      [Feather, "Professional Insights", "Insights"],
+    ].map(([Icon, title, filter], index) => (
       <div
         key={title}
+        role="button"
+        tabIndex={0}
+        onClick={() => scrollToSelectedPublications(filter)}
+        onKeyDown={(event) =>
+          handleKeyboardAction(event, () => scrollToSelectedPublications(filter))
+        }
         className={`
           group
           relative
@@ -344,6 +388,20 @@ export default function Publication() {
           {publicationTypes.map((item, index) => (
             <motion.article
               key={item.title}
+              role="button"
+              tabIndex={0}
+              onClick={() =>
+                scrollToSelectedPublications(
+                  ["Articles", "Chapters", "Conference", "Insights"][index],
+                )
+              }
+              onKeyDown={(event) =>
+                handleKeyboardAction(event, () =>
+                  scrollToSelectedPublications(
+                    ["Articles", "Chapters", "Conference", "Insights"][index],
+                  ),
+                )
+              }
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -518,6 +576,7 @@ export default function Publication() {
         <div className="mt-6 flex flex-wrap gap-3">
           <button
             type="button"
+            onClick={showFeaturedAbstract}
             className="
               rounded-[5px]
               bg-[#0B3D61]
@@ -538,6 +597,7 @@ export default function Publication() {
 
           <button
             type="button"
+            onClick={() => scrollToSelectedPublications("All")}
             className="
               rounded-[5px]
               border
@@ -577,10 +637,16 @@ export default function Publication() {
         <SectionTitle>Selected Publications</SectionTitle>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           {["All", "Articles", "Chapters", "Conference", "Insights"].map(
-            (item, index) => (
+            (item) => (
               <span
                 key={item}
-                className={`rounded-full border px-6 py-1.5 text-[11px] ${index === 0 ? "border-[#0B3D61] bg-[#0B3D61] text-white" : "border-[#aebbc5] bg-white text-[#0B3D61]"}`}
+                role="button"
+                tabIndex={0}
+                onClick={() => setActiveFilter(item)}
+                onKeyDown={(event) =>
+                  handleKeyboardAction(event, () => setActiveFilter(item))
+                }
+                className={`rounded-full border px-6 py-1.5 text-[11px] ${activeFilter === item ? "border-[#0B3D61] bg-[#0B3D61] text-white" : "border-[#aebbc5] bg-white text-[#0B3D61]"}`}
               >
                 {item}
               </span>
@@ -588,7 +654,10 @@ export default function Publication() {
           )}
         </div>
         <div className="mt-6 overflow-hidden rounded-[12px] border border-[#dedbd5] bg-white">
-          {selectedPublications.map(({ title, type, icon: Icon, color }) => (
+          {filteredPublications.map((publication) => {
+            const { title, type, icon: Icon, color } = publication;
+
+            return (
             <div
               key={title}
               className="grid gap-3 border-b border-[#e5e1dc] p-4 last:border-0 sm:grid-cols-[1.35fr_1fr] sm:items-center lg:grid-cols-[1.45fr_1.15fr_.55fr_auto]"
@@ -610,11 +679,16 @@ export default function Publication() {
               <span className="w-fit rounded bg-[#eff1ef] px-4 py-1.5 text-[10px] text-[#66716c]">
                 {type}
               </span>
-              <button className="w-fit rounded-[4px] border border-[#0B3D61] px-7 py-1.5 text-[11px] text-[#0B3D61] transition hover:bg-[#0B3D61] hover:text-white">
+              <button
+                type="button"
+                onClick={() => showPublicationDetails(publication)}
+                className="w-fit rounded-[4px] border border-[#0B3D61] px-7 py-1.5 text-[11px] text-[#0B3D61] transition hover:bg-[#0B3D61] hover:text-white"
+              >
                 View
               </button>
             </div>
-          ))}
+            );
+          })}
         </div>
       </motion.section>
 
