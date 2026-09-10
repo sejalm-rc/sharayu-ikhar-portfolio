@@ -14,11 +14,12 @@ import {
   Sprout,
   Target,
   Users,
+  UsersRound,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import AnimatedSection from "../components/AnimatedSection";
 
@@ -42,6 +43,8 @@ import collaborationBg from "../assets/images/img/rbg.png";
 import r8 from "../assets/images/img/r8.png";
 import r9 from "../assets/images/img/r9.png";
 import r10 from "../assets/images/img/r10.png";
+
+import r11 from "../assets/images/img/r11.png";
 import cta from "../assets/images/img/ctaResearch.png";
 
 /* =========================================================
@@ -79,6 +82,27 @@ const areas = [
     icon: Users,
     title: "Knowledge Networks",
     text: "Building and studying networks that facilitate knowledge exchange, learning, and collaborative problem-solving.",
+  },
+];
+
+
+
+
+const impactItems = [
+  {
+    icon: Lightbulb,
+    title: "Insight",
+    text: "We explore complex questions, challenge assumptions, and generate meaningful insights.",
+  },
+  {
+    icon: Target,
+    title: "Strategy",
+    text: "We translate insights into strategies that align with goals and drive effective action.",
+  },
+  {
+    icon: Sprout,
+    title: "Sustainable Change",
+    text: "We contribute to stronger systems, resilient organizations, and lasting societal impact.",
   },
 ];
 
@@ -177,21 +201,29 @@ const contributionItems = [
     icon: ClipboardList,
     title: "Research Coordination",
     text: "Planning and overseeing research activities to ensure quality and alignment.",
+    iconBg: "#dce6e3",
+    iconColor: "#506f73",
   },
   {
-    icon: Handshake,
+    icon: UsersRound,
     title: "Academic Collaboration",
-    text: "Working with scholars and professionals across disciplines.",
+    text: "Working with scholars and professionals across disciplines to advance knowledge.",
+    iconBg: "#f0ded3",
+    iconColor: "#8a6558",
   },
   {
     icon: BookOpen,
     title: "Knowledge Dissemination",
-    text: "Sharing findings through publications, platforms, and conversations.",
+    text: "Sharing findings through publications, platforms, and conversations that inform practice.",
+    iconBg: "#ead8ad",
+    iconColor: "#5a6c72",
   },
   {
     icon: Rocket,
     title: "Innovation Support",
-    text: "Supporting initiatives that turn ideas into practical solutions.",
+    text: "Supporting initiatives that turn ideas into practical solutions and new possibilities.",
+    iconBg: "#0d3658",
+    iconColor: "#ffffff",
   },
 ];
 
@@ -201,24 +233,24 @@ const contributionItems = [
 
 const noteItems = [
   {
-    image: initiativeEcosystems,
+    image: r8,
     title: "Building a Culture of Inquiry",
-    text: "How organizations can cultivate curiosity, critical thinking, and evidence-led practice.",
+    text: "How organizations can cultivate curiosity, critical thinking, and evidence-led mindsets.",
   },
   {
-    image: collaborationBg,
+    image: r9,
     title: "Why Collaboration Improves Research",
-    text: "Exploring the power of partnerships in strengthening research quality and relevance.",
+    text: "Exploring the power of partnerships in generating deeper insights and impact.",
   },
   {
-    image: initiativeData,
+    image: r10,
     title: "Turning Evidence Into Better Decisions",
-    text: "Practical approaches for translating research evidence into meaningful action.",
+    text: "Practical approaches for embedding evidence in everyday decision-making.",
   },
   {
-    image: initiativePlatforms,
+    image: r11,
     title: "Explore Publications & Scholarly Work",
-    text: "Discover a collection of my publications, research outputs, and scholarly contributions.",
+    text: "Discover a collection of my publications, research papers, and scholarly contributions.",
   },
 ];
 
@@ -1011,281 +1043,311 @@ export default function Research() {
           COLLABORATION & KNOWLEDGE EXCHANGE
       ====================================================== */}
 
-    <AnimatedSection className="pb-10 sm:pb-12 lg:pb-14">
+  <AnimatedSection className="pb-10">
   <div className={pageContainer}>
     <div
       className="
         group
-        grid
+        relative
         w-full
         overflow-hidden
         rounded-[9px]
         border
         border-[#dedbd3]
         bg-[#fbfaf6]
-        shadow-[0_5px_18px_rgba(23,60,80,0.035)]
 
-        lg:grid-cols-[45.7%_54.3%]
+        shadow-[0_5px_18px_rgba(23,60,80,0.035)]
 
         transition-all
         duration-500
         ease-out
 
+        hover:-translate-y-[2px]
         hover:shadow-[0_10px_30px_rgba(23,60,80,0.07)]
+
+        lg:min-h-[265px]
       "
     >
-      {/* ================= LEFT IMAGE ================= */}
+      {/* =========================================
+          ONLY ONE BACKGROUND IMAGE
+      ========================================== */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          z-0
+
+          bg-no-repeat
+          bg-top
+
+          transition-transform
+          duration-[1200ms]
+          ease-out
+
+          group-hover:scale-[1.01]
+
+          max-lg:bg-[length:auto_270px]
+          max-lg:bg-left-top
+
+          lg:bg-center
+          lg:bg-[length:100%_100%]
+        "
+        style={{
+          backgroundImage: `url(${collaborationBg})`,
+        }}
+      />
+
+      {/* =========================================
+          MOBILE IMAGE SPACE
+          Empty because image is already background
+      ========================================== */}
       <div
         className="
           relative
-          min-h-[220px]
-          overflow-hidden
+          z-[1]
+          h-[210px]
 
-          sm:min-h-[270px]
-          md:min-h-[310px]
-          lg:min-h-[255px]
+          sm:h-[250px]
+          md:h-[290px]
+
+          lg:hidden
         "
-      >
-        <img
-          src={collaborationBg}
-          alt="Researchers participating in a collaborative roundtable"
-          className="
-            absolute
-            inset-0
-            h-full
-            w-full
-            object-cover
-            object-center
+      />
 
-            transition-transform
-            duration-[1200ms]
-            ease-out
-
-            group-hover:scale-[1.025]
-          "
-        />
-      </div>
-
-      {/* ================= RIGHT CONTENT ================= */}
+      {/* =========================================
+          DESKTOP GRID
+      ========================================== */}
       <div
         className="
           relative
-          isolate
-          overflow-hidden
+          z-[2]
 
-          px-5
-          py-6
-
-          sm:px-7
-          sm:py-7
-
-          md:px-9
-          md:py-8
-
-          lg:flex
-          lg:min-h-[255px]
-          lg:items-center
-          lg:px-[38px]
-          lg:py-[18px]
+          lg:grid
+          lg:min-h-[265px]
+          lg:grid-cols-[45.7%_54.3%]
         "
       >
-        {/* BACKGROUND IMAGE */}
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-            z-0
+        {/* LEFT SIDE
+            No second image here */}
+        <div className="hidden lg:block" />
 
-            bg-right-bottom
-            bg-no-repeat
-
-            opacity-100
-
-            [background-size:145px_auto]
-
-            sm:[background-size:170px_auto]
-            lg:[background-size:175px_auto]
-          "
-          style={{
-            backgroundImage: `url(${collaborationBg})`,
-          }}
-        />
-
-        {/* optional soft overlay to keep text clear */}
-        <div
-          className="
-            pointer-events-none
-            absolute
-            inset-0
-            z-[1]
-            bg-gradient-to-r
-            from-[#fbfaf6]
-            via-[#fbfaf6]/95
-            to-[#fbfaf6]/45
-          "
-        />
-
-        {/* CONTENT */}
+        {/* =========================================
+            RIGHT CONTENT
+        ========================================== */}
         <div
           className="
             relative
-            z-10
-            w-full
-            max-w-[570px]
+            flex
+            items-center
+
+            bg-[#fbfaf6]
+
+            px-5
+
+            sm:px-7
+          
+            md:px-9
+          
+
+            lg:min-h-[265px]
+            lg:bg-transparent
+            lg:px-[28px]
+           
+
+            xl:px-[34px]
           "
         >
-          {/* HEADING */}
-          <h2
+          {/* Mobile soft fade so content stays clean */}
+          <div
+            aria-hidden="true"
             className="
-              font-['Georgia']
-              text-[20px]
-              font-normal
-              leading-[1.25]
-              tracking-[-0.25px]
-              text-[#173c50]
+              pointer-events-none
+              absolute
+              inset-0
+              -z-[1]
+              bg-[#fbfaf6]
 
-              sm:text-[22px]
-              md:text-[23px]
-
-              lg:text-[22px]
+              lg:hidden
             "
-          >
-            Collaboration &amp; Knowledge Exchange
-          </h2>
+          />
 
-          {/* DESCRIPTION */}
-          <p
-            className="
-              mt-[7px]
-              max-w-[520px]
-
-              font-sans
-              text-[11px]
-              font-normal
-              leading-[1.6]
-              text-[#667477]
-
-              sm:text-[11.5px]
-
-              lg:text-[10.5px]
-              lg:leading-[1.55]
-            "
-          >
-            I bring together researchers, institutions, professionals, and
-            decision-makers to co-create knowledge and drive meaningful change.
-          </p>
-
-          {/* ITEMS */}
           <div
             className="
-              mt-5
-              space-y-[13px]
+              w-full
+              max-w-[540px]
 
-              sm:mt-[20px]
-              sm:space-y-[14px]
-
-              lg:mt-[17px]
-              lg:space-y-[11px]
+              motion-safe:animate-[collaborationContent_.7s_ease-out_both]
             "
           >
-            {collaborationItems.map((item, index) => (
-              <div
-                key={item.title}
-                className="
-                  group/item
-                  flex
-                  items-start
-                  gap-[11px]
+            {/* HEADING */}
+            <h2
+              className="
+                font-serif
+                text-[20px]
+                font-normal
+                leading-[1.2]
+                tracking-[-0.25px]
+                text-[#173c50]
 
-                  transition-all
-                  duration-300
+                sm:text-[21px]
+                md:text-[22px]
+                mt-2
+           
+                lg:text-[27px]
+                xl:text-[29px]
+              "
+            >
+              Collaboration &amp; Knowledge Exchange
+            </h2>
 
-                  hover:translate-x-[3px]
-                "
-                style={{
-                  transitionDelay: `${index * 40}ms`,
-                }}
-              >
-                {/* CHECK CIRCLE */}
+            {/* DESCRIPTION */}
+            <p
+              className="
+                mt-[6px]
+                max-w-[500px]
+
+                font-sans
+                text-[10.5px]
+                font-normal
+                leading-[1.5]
+                text-[#414b4d]
+
+                sm:text-[11px]
+
+                lg:max-w-[455px]
+                lg:text-[12px]
+                lg:leading-[1.5]
+
+              "
+            >
+              I bring together researchers, institutions, professionals, and
+              decision-makers to co-create knowledge and drive meaningful
+              change.
+            </p>
+
+            {/* ITEMS */}
+            <div
+              className="
+                mt-[14px]
+                space-y-[3px]
+
+                sm:mt-[20px]
+                sm:space-y-[6px]
+
+                lg:mt-[14px]
+                lg:space-y-[6px]
+              "
+            >
+              {collaborationItems.map((item, index) => (
                 <div
+                  key={item.title}
                   className="
-                    mt-[1px]
+                    group/item
                     flex
-                    h-[21px]
-                    w-[21px]
-                    shrink-0
-                    items-center
-                    justify-center
-
-                    rounded-full
-                    border
-                    border-[#88a49e]
-
-                    bg-[#fbfaf6]/80
+                    items-start
+                    gap-[10px]
 
                     transition-all
                     duration-300
+                    ease-out
 
-                    group-hover/item:border-[#6f958b]
-                    group-hover/item:bg-[#eef4f1]
+                    hover:translate-x-[3px]
                   "
+                  style={{
+                    animationDelay: `${150 + index * 100}ms`,
+                  }}
                 >
-                  <Check
-                    strokeWidth={1.8}
+                  {/* CHECK ICON */}
+                  <div
                     className="
-                      h-[10px]
-                      w-[10px]
-                      text-[#779a91]
-                    "
-                  />
-                </div>
+                      mt-[1px]
+                      flex
+                      h-[20px]
+                      w-[20px]
+                      shrink-0
+                      items-center
+                      justify-center
 
-                {/* ITEM TEXT */}
-                <div className="min-w-0 pt-0">
-                  <h3
-                    className="
-                      font-['Georgia']
-                      text-[12px]
-                      font-normal
-                      leading-[1.25]
-                      text-[#183b4e]
+                      rounded-full
+                      border
+                      border-[#528579]
 
-                      transition-colors
+                      bg-[#fbfaf6]/80
+
+                      transition-all
                       duration-300
 
-                      group-hover/item:text-[#b86e51]
+                      group-hover/item:border-[#70968d]
+                      group-hover/item:bg-[#eef4f1]
 
-                      sm:text-[12.5px]
-
-                      lg:text-[11.5px]
+                      lg:h-[18px]
+                      lg:w-[18px]
                     "
                   >
-                    {item.title}
-                  </h3>
+                    <Check
+                      strokeWidth={1.7}
+                      className="
+                        h-[9px]
+                        w-[9px]
+                        text-[#257a23]
 
-                  <p
-                    className="
-                      mt-[2px]
-                      max-w-[460px]
+                        lg:h-[12px]
+                        lg:w-[12px]
+                      "
+                    />
+                  </div>
 
-                      font-sans
-                      text-[9.5px]
-                      font-normal
-                      leading-[1.5]
-                      text-[#6c777a]
+                  {/* ITEM CONTENT */}
+                  <div className="min-w-0">
+                    <h3
+                      className="
+                        font-serif
+                        text-[13.5px]
+                        font-normal
+                        leading-[1.25]
+                        text-[#183b4e]
 
-                      sm:text-[10px]
+                        transition-colors
+                        duration-300
 
-                      lg:text-[9px]
-                    "
-                  >
-                    {item.text}
-                  </p>
+                        group-hover/item:text-[#ae684f]
+
+                        sm:text-[13px]
+
+                        lg:text-[13.5px]
+                        xl:text-[14px]
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      className="
+                        mt-[1px]
+                        max-w-[455px]
+
+                        font-sans
+                        text-[10.5px]
+                        font-normal
+                        leading-[1.45]
+                        text-[#6c777a]
+
+                        sm:text-[11px]
+pb-3
+                        lg:max-w-[440px]
+                        lg:text-[11.5px]
+
+                      
+                      "
+                    >
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -1297,421 +1359,692 @@ export default function Research() {
           FROM INQUIRY TO IMPACT
       ====================================================== */}
 
-      <AnimatedSection className="pb-12">
-        <div className={pageContainer}>
-          <div
-            className="
-              rounded-[8px]
+ <AnimatedSection className="pb-10 sm:pb-12">
+  <div className={pageContainer}>
+    <div
+      className="
+        relative
+        overflow-hidden
+        rounded-[9px]
+        border
+        border-[#e1e6e1]
+        bg-[#ecefec]
 
-              border
-              border-[#e2e8e1]
+        px-4
+        pb-5
+        pt-3
 
-              bg-[#f0f5f1]
+        shadow-[0_5px_18px_rgba(23,60,80,0.035)]
 
-              px-5
-              py-7
+        sm:px-6
+        sm:pb-6
 
-              sm:px-7
-            "
-          >
-            <h2
-              className="
-                text-center
-                font-serif
-                text-[27px]
-                font-medium
-                text-[#173c50]
+        lg:px-[32px]
+        lg:pb-[13px]
+        lg:pt-[7px]
+      "
+    >
+      {/* LEFT DOT PATTERN */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          left-[8px]
+          top-[75px]
 
-                sm:text-[30px]
-              "
-            >
-              From Inquiry to Impact
-            </h2>
+          hidden
+          h-[82px]
+          w-[22px]
 
+          opacity-70
+
+          lg:block
+        "
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #769b94 1.2px, transparent 1.4px)",
+          backgroundSize: "8px 8px",
+        }}
+      />
+
+      {/* RIGHT DOT PATTERN */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          right-[8px]
+          top-[75px]
+
+          hidden
+          h-[82px]
+          w-[22px]
+
+          opacity-70
+
+          lg:block
+        "
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #769b94 1.2px, transparent 1.4px)",
+          backgroundSize: "8px 8px",
+        }}
+      />
+
+      {/* TITLE */}
+      <h2
+        className="
+          relative
+          z-10
+
+          text-center
+
+          font-['Serif']
+          text-[27px]
+          font-normal
+          leading-[1.2]
+          tracking-[-0.35px]
+          text-[#173c50]
+
+          sm:text-[29px]
+
+          lg:text-[30px]
+        "
+      >
+        From Inquiry to Impact
+      </h2>
+
+      {/* FLOW */}
+      <div
+        className="
+          relative
+          z-10
+
+          mt-4
+
+          flex
+          flex-col
+          items-stretch
+          justify-center
+          gap-3
+
+          sm:mt-4
+
+          lg:mt-6
+          lg:grid
+          lg:grid-cols-[1fr_52px_1fr_52px_1.06fr]
+          lg:items-center
+          lg:gap-0
+        "
+      >
+        {impactItems.map(({ icon: Icon, title, text }, index) => (
+          <Fragment key={title}>
+            {/* CARD */}
             <div
               className="
-                mt-6
-                grid
-                gap-5
+                group
 
-                md:grid-cols-3
+                flex
+                min-h-[102px]
+                items-center
+
+                rounded-[14px]
+                border
+                border-[#eeeeea]
+
+                bg-[#fbfbf8]
+
+                px-4
+                py-4
+
+                shadow-[0_2px_8px_rgba(23,60,80,0.018)]
+
+                transition-all
+                duration-500
+                ease-out
+
+                hover:-translate-y-[3px]
+                hover:shadow-[0_10px_26px_rgba(23,60,80,0.07)]
+
+                sm:px-5
+
+                lg:min-h-[102px]
+                lg:px-[12px]
+                lg:py-[12px]
               "
+              style={{
+                animationDelay: `${index * 120}ms`,
+              }}
             >
-              {[
-                {
-                  icon: Lightbulb,
-                  title: "Insight",
-                  text: "We explore complex questions, challenge assumptions, and generate meaningful insights.",
-                },
-                {
-                  icon: Target,
-                  title: "Strategy",
-                  text: "We translate insights into strategies aligned with goals and effective action.",
-                },
-                {
-                  icon: Sprout,
-                  title: "Sustainable Change",
-                  text: "We contribute to stronger systems, resilient organizations, and lasting societal impact.",
-                },
-              ].map(({ icon: Icon, title, text }, index) => (
-                <div
-                  key={title}
+              {/* ICON CIRCLE */}
+              <div
+                className="
+                  flex
+                  h-[60px]
+                  w-[60px]
+                  shrink-0
+                  items-center
+                  justify-center
+
+                  rounded-full
+                  border
+                  border-[#d5d3c9]
+
+                  bg-[#faf9f5]
+
+                  transition-all
+                  duration-500
+
+                  group-hover:scale-[1.05]
+                  group-hover:border-[#829b94]
+
+                  sm:h-[60px]
+                  sm:w-[60px]
+
+                  lg:h-[60px]
+                  lg:w-[60px]
+                "
+              >
+                <Icon
                   className="
-                    group
-                    relative
+                    h-[30px]
+                    w-[30px]
 
-                    rounded-[8px]
-
-                    border
-                    border-[#e6e6df]
-
-                    bg-white
-
-                    px-5
-                    py-5
-
-                    text-center
-
-                    shadow-[0_4px_14px_rgba(23,60,80,0.035)]
+                    text-[#526d70]
 
                     transition-all
+                    duration-500
+
+                    group-hover:scale-[1.07]
+                    group-hover:text-[#173c50]
+                  "
+                  strokeWidth={1.15}
+                />
+              </div>
+
+              {/* TEXT */}
+              <div
+                className="
+                  min-w-0
+
+                  pl-4
+
+                  lg:pl-[15px]
+                "
+              >
+                <h3
+                  className="
+                    font-['Serif']
+                    text-[15px]
+                    font-semibold
+                    leading-[1.25]
+                    text-[#203d4e]
+
+                    transition-colors
                     duration-300
 
-                    hover:-translate-y-1
-                    hover:shadow-[0_11px_25px_rgba(23,60,80,0.08)]
+                    group-hover:text-[#173c50]
+
+                    sm:text-[16px]
+
+                    lg:text-[17px]
                   "
                 >
-                  <div
-                    className="
-                      mx-auto
+                  {title}
+                </h3>
 
-                      flex
-                      h-[55px]
-                      w-[55px]
-                      items-center
-                      justify-center
+                <p
+                  className="
+                    mt-[6px]
 
-                      rounded-full
+                    max-w-[220px]
 
-                      border
-                      border-[#d7cdbc]
+                    text-[12px]
+                    font-normal
+                    leading-[1.7]
+                    text-[#667276]
 
-                      transition-all
-                      duration-300
+                    sm:text-[11.5px]
 
-                      group-hover:border-[#c66f4e]
-                    "
-                  >
-                    <Icon
-                      size={25}
-                      strokeWidth={1.2}
-                      className="
-                        text-[#698a83]
-
-                        transition-colors
-
-                        group-hover:text-[#c66f4e]
-                      "
-                    />
-                  </div>
-
-                  <h3
-                    className="
-                      mt-3
-                      font-serif
-                      text-[16px]
-                      font-semibold
-                      text-[#173c50]
-                    "
-                  >
-                    {title}
-                  </h3>
-
-                  <p
-                    className="
-                      mx-auto
-                      mt-2
-                      max-w-[230px]
-
-                      text-[9.5px]
-                      leading-[1.55]
-                      text-[#687579]
-                    "
-                  >
-                    {text}
-                  </p>
-
-                  {index < 2 && (
-                    <ArrowRight
-                      size={18}
-                      className="
-                        absolute
-                        -right-[14px]
-                        top-1/2
-
-                        hidden
-
-                        -translate-y-1/2
-
-                        text-[#829d93]
-
-                        md:block
-                      "
-                    />
-                  )}
-                </div>
-              ))}
+                    lg:mt-[5px]
+                    lg:text-[12px]
+                    lg:leading-[1.65]
+                  "
+                >
+                  {text}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-      </AnimatedSection>
+
+            {/* ARROW */}
+            {index < impactItems.length - 1 && (
+              <div
+                className="
+                  flex
+                  h-8
+                  items-center
+                  justify-center
+
+                  lg:h-auto
+                "
+              >
+                <ArrowRight
+                  strokeWidth={1.3}
+                  className="
+                    h-[26px]
+                    w-[26px]
+
+                    rotate-90
+                    text-[#648982]
+
+                    transition-transform
+                    duration-500
+
+                    lg:h-[33px]
+                    lg:w-[33px]
+                    lg:rotate-0
+                  "
+                />
+              </div>
+            )}
+          </Fragment>
+        ))}
+      </div>
+    </div>
+  </div>
+</AnimatedSection>
 
       {/* =====================================================
           RESEARCH CONTRIBUTIONS
       ====================================================== */}
+<AnimatedSection className="pb-10 sm:pb-12">
+  <div className={pageContainer}>
+    {/* TITLE */}
+    <h2
+      className="
+        text-center
+        font-['Serif']
+        text-[27px]
+        font-normal
+        leading-[1.2]
+        tracking-[-0.3px]
+        text-[#173c50]
 
-      <AnimatedSection className="pb-12">
-        <div className={pageContainer}>
-          <h2
-            className="
-              text-center
-              font-serif
-              text-[27px]
-              font-medium
-              text-[#173c50]
+        sm:text-[29px]
+        lg:text-[30px]
+      "
+    >
+      Research Contributions
+    </h2>
 
-              sm:text-[30px]
-            "
-          >
-            Research Contributions
-          </h2>
+    {/* MAIN OUTER BOX */}
+    <div
+      className="
+        mt-[18px]
+        overflow-hidden
 
-          <div
-            className="
-              mt-6
+        rounded-[9px]
+        border
+        border-[#e3dfd7]
 
-              grid
-              grid-cols-1
-              gap-4
+        bg-[#fcfbf8]
 
-              sm:grid-cols-2
+        shadow-[0_3px_12px_rgba(23,60,80,0.025)]
+      "
+    >
+      <div
+        className="
+          grid
+          grid-cols-1
 
-              lg:grid-cols-4
-            "
-          >
-            {contributionItems.map(({ icon: Icon, title, text }) => (
+          sm:grid-cols-2
+
+          lg:grid-cols-4
+        "
+      >
+        {contributionItems.map(
+          ({ icon: Icon, title, text, iconBg, iconColor }, index) => (
+            <div
+              key={title}
+              className={`
+                group
+                relative
+
+                flex
+                min-h-[104px]
+                items-center
+
+                px-5
+                py-4
+
+                transition-all
+                duration-500
+                ease-out
+
+                hover:bg-white
+
+                sm:min-h-[110px]
+                sm:px-6
+
+                lg:min-h-[92px]
+                lg:px-[13px]
+                lg:py-[10px]
+
+                ${
+                  index === 0
+                    ? ""
+                    : "border-t border-[#e5e1db] sm:border-t-0"
+                }
+
+                ${
+                  index === 1
+                    ? "sm:border-l sm:border-[#e5e1db]"
+                    : ""
+                }
+
+                ${
+                  index === 2
+                    ? "sm:border-t sm:border-[#e5e1db] lg:border-t-0 lg:border-l"
+                    : ""
+                }
+
+                ${
+                  index === 3
+                    ? "sm:border-l sm:border-t sm:border-[#e5e1db] lg:border-t-0"
+                    : ""
+                }
+              `}
+            >
+              {/* ICON CIRCLE */}
               <div
-                key={title}
                 className="
-                  group
                   flex
+                  h-[58px]
+                  w-[58px]
+                  shrink-0
                   items-center
-                  gap-4
+                  justify-center
 
-                  rounded-[8px]
-
-                  border
-                  border-[#e3e7e1]
-
-                  bg-[#f6f8f5]
-
-                  px-5
-                  py-5
+                  rounded-full
 
                   transition-all
-                  duration-300
+                  duration-500
+                  ease-out
 
-                  hover:-translate-y-1
-                  hover:bg-white
-                  hover:shadow-[0_10px_24px_rgba(23,60,80,0.07)]
+                  group-hover:scale-[1.06]
+
+                  sm:h-[60px]
+                  sm:w-[60px]
+
+                  lg:h-[44px]
+                  lg:w-[44px]
+                "
+                style={{
+                  backgroundColor: iconBg,
+                }}
+              >
+                <Icon
+                  strokeWidth={1.25}
+                  className="
+                    h-[27px]
+                    w-[27px]
+
+                    transition-transform
+                    duration-500
+
+                    group-hover:scale-[1.08]
+
+                    lg:h-[22px]
+                    lg:w-[22px]
+                  "
+                  style={{
+                    color: iconColor,
+                  }}
+                />
+              </div>
+
+              {/* TEXT */}
+              <div
+                className="
+                  min-w-0
+                  pl-4
+
+                  lg:pl-[10px]
                 "
               >
-                <div
+                <h3
                   className="
-                    flex
-                    h-[46px]
-                    w-[46px]
-                    shrink-0
-                    items-center
-                    justify-center
+                    font-['Serif']
+                    text-[15px]
+                    font-medium
+                    leading-[1.25]
+                    text-[#1c3c4f]
 
-                    rounded-full
+                    sm:text-[16px]
 
-                    bg-[#e8efea]
+                    lg:text-[17px]
                   "
                 >
-                  <Icon
-                    size={23}
-                    strokeWidth={1.2}
-                    className="
-                      text-[#6c8c85]
+                  {title}
+                </h3>
 
-                      transition-colors
+                <p
+                  className="
+                    mt-[6px]
 
-                      group-hover:text-[#c66f4e]
-                    "
-                  />
-                </div>
+                    max-w-[240px]
 
-                <div>
-                  <h3
-                    className="
-                      font-serif
-                      text-[14px]
-                      font-semibold
-                      text-[#173c50]
-                    "
-                  >
-                    {title}
-                  </h3>
+                    text-[10px]
+                    font-normal
+                    leading-[1.55]
+                    text-[#667276]
 
-                  <p
-                    className="
-                      mt-1
-                      text-[9px]
-                      leading-[1.5]
-                      text-[#6d797c]
-                    "
-                  >
-                    {text}
-                  </p>
-                </div>
+                    sm:text-[10px]
+
+                    lg:mt-[6px]
+                    lg:max-w-[190px]
+                    lg:text-[11px]
+                    lg:leading-[1.55]
+                  "
+                >
+                  {text}
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
+            </div>
+          )
+        )}
+      </div>
+    </div>
+  </div>
+</AnimatedSection>
 
       {/* =====================================================
           RESEARCH NOTES & PERSPECTIVES
       ====================================================== */}
+<AnimatedSection className="pb-10">
+  <div className={pageContainer}>
+    {/* ================= HEADING ================= */}
+    <h2
+      className="
+        font-['Serif']
+        text-[27px]
+        font-normal
+        leading-[1.2]
+        tracking-[-0.3px]
+        text-[#173c50]
 
-      <AnimatedSection className="pb-10">
-        <div className={pageContainer}>
-          <h2
+        sm:text-[29px]
+        lg:text-[30px]
+      "
+    >
+      Research Notes &amp; Perspectives
+    </h2>
+
+    {/* ================= CARDS ================= */}
+    <div
+      className="
+        mt-[9px]
+
+        grid
+        grid-cols-1
+        gap-4
+
+        sm:grid-cols-2
+
+        lg:grid-cols-[1fr_1fr_1fr_1.18fr]
+        lg:gap-[7px]
+      "
+    >
+      {noteItems.map((item, index) => {
+        const isPublication = index === 3;
+
+        return (
+          <article
+            key={item.title}
             className="
-              font-serif
-              text-[27px]
-              font-medium
-              text-[#173c50]
+              group
+              flex
+              min-w-0
+              flex-col
 
-              sm:text-[30px]
+              overflow-hidden
+
+              rounded-[8px]
+
+              border
+              border-[#e7ded4]
+
+              bg-[#fffdfa]
+
+            
+             
+
+              shadow-[0_2px_7px_rgba(23,60,80,0.025)]
+
+              transition-all
+              duration-500
+              ease-out
+
+              hover:-translate-y-[3px]
+              hover:border-[#d8cabd]
+              hover:shadow-[0_9px_22px_rgba(23,60,80,0.07)]
             "
           >
-            Research Notes &amp; Perspectives
-          </h2>
+            {/* ================= IMAGE ================= */}
+            <div
+              className={`
+                relative
+                w-full
+                shrink-0
+                overflow-hidden
 
-          <div
-            className="
-              mt-5
-              grid
-              grid-cols-1
-              gap-4
+               
 
-              sm:grid-cols-2
+                ${
+                  isPublication
+                    ? "h-[150px] sm:h-[125px] lg:h-[130px]"
+                    : "h-[150px] sm:h-[125px] lg:h-[130px]"
+                }
+              `}
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                className={`
+                  block
+                  h-full
+                  w-full
 
-              lg:grid-cols-4
-            "
-          >
-            {noteItems.map((item, index) => (
-              <article
-                key={item.title}
+                  object-cover
+
+                  transition-transform
+                  duration-[900ms]
+                  ease-out
+
+                  group-hover:scale-[1.035]
+
+                  ${
+                    isPublication
+                      ? "object-center"
+                      : "object-center"
+                  }
+                `}
+              />
+            </div>
+
+            {/* ================= CONTENT ================= */}
+            <div
+              className="
+                flex
+                flex-1
+                flex-col
+
+                px-[3px]
+                pt-[7px]
+
+                sm:px-[4px]
+
+                lg:px-[3px]
+                lg:pt-[6px]
+              "
+            >
+              {/* TITLE */}
+              <h3
                 className="
-                  group
-                  overflow-hidden
+                  font-['Serif']
+                  text-[15px]
+                  mt-2
+                  font-medium
+                  leading-[1.25]
+                  tracking-[-0.1px]
+                  text-[#173c50]
 
-                  rounded-[7px]
-
-                  border
-                  border-[#e7ded4]
-
-                  bg-[#fffefd]
-
-                  transition-all
+                  transition-colors
                   duration-300
 
-                  hover:-translate-y-1
-                  hover:border-[#d8c3b1]
-                  hover:shadow-[0_10px_26px_rgba(23,60,80,0.08)]
+                  group-hover:text-[#315f68]
+
+                  sm:text-[15px]
+px-2
+                  lg:text-[15px]
+                  lg:leading-[1.2]
                 "
               >
-                <div className="h-[115px] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="
-                      h-full
-                      w-full
-                      object-cover
+                {item.title}
+              </h3>
 
-                      transition-transform
-                      duration-700
+              {/* DESCRIPTION */}
+              <p
+                className="
+                  mt-[5px]
 
-                      group-hover:scale-[1.05]
-                    "
-                  />
-                </div>
+                  text-[10px]
+                  font-normal
+                  leading-[1.55]
+                  text-[#677377]
 
-                <div className="p-4">
-                  <h3
-                    className="
-                      font-serif
-                      text-[14px]
-                      font-semibold
-                      leading-[1.25]
-                      text-[#173c50]
-                    "
-                  >
-                    {item.title}
-                  </h3>
+                  sm:text-[9.5px]
 
-                  <p
-                    className="
-                      mt-2
+                  lg:mt-[6px]
+                  lg:text-[11px]
+                  lg:leading-[1.48]
+                  pb-5
+                  px-2
+                "
+              >
+                {item.text}
+              </p>
 
-                      text-[9px]
-                      leading-[1.55]
-                      text-[#6a777b]
-                    "
-                  >
-                    {item.text}
-                  </p>
-
-                  <Link
-                    to={index === 3 ? "/publication" : "/research"}
-                    className="
-                      group/link
-                      mt-3
-
-                      inline-flex
-                      items-center
-                      gap-1.5
-
-                      text-[9.5px]
-                      font-semibold
-                      text-[#5f857d]
-
-                      transition-colors
-
-                      hover:text-[#c66f4e]
-                    "
-                  >
-                    {index === 3 ? "View Publications" : "Read More"}
-
-                    <ArrowRight
-                      size={11}
-                      className="
-                        transition-transform
-                        group-hover/link:translate-x-1
-                      "
-                    />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
+           
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</AnimatedSection>
 
    {/* =====================================================
           CTA SECTION
