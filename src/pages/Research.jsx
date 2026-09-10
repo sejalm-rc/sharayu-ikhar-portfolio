@@ -38,7 +38,7 @@ import initiativeEcosystems from "../assets/images/img/r5.png";
 import initiativeData from "../assets/images/img/r6.png";
 import initiativePlatforms from "../assets/images/img/r7.png";
 
-import collaboration from "../assets/images/img/rbg.png";
+import collaborationBg from "../assets/images/img/rbg.png";
 import r8 from "../assets/images/img/r8.png";
 import r9 from "../assets/images/img/r9.png";
 import r10 from "../assets/images/img/r10.png";
@@ -138,7 +138,7 @@ const initiatives = [
   {
     image: initiativeData,
     tag: "Analytics",
-    title: "Data-Informed Organizational Decisions",
+    title: "Data Organizational Decisions",
     text: "Using data and evidence to guide strategy, improve performance, and support smarter decision-making.",
   },
   {
@@ -206,7 +206,7 @@ const noteItems = [
     text: "How organizations can cultivate curiosity, critical thinking, and evidence-led practice.",
   },
   {
-    image: collaboration,
+    image: collaborationBg,
     title: "Why Collaboration Improves Research",
     text: "Exploring the power of partnerships in strengthening research quality and relevance.",
   },
@@ -472,20 +472,20 @@ export default function Research() {
    <AnimatedSection
   className="
     bg-[#fffdf9]
-    py-[14px]
-    sm:py-[18px]
-    lg:py-[14px]
+    py-[34px]
+    sm:py-[38px]
+    lg:py-[44px]
   "
 >
   <div
     className="
       mx-auto
       w-[calc(100%-40px)]
-      max-w-[1300px]
+      max-w-[1260px]
 
       sm:w-[calc(100%-64px)]
-      lg:w-[calc(100%-100px)]
-      xl:w-[calc(100%-120px)]
+      lg:w-[calc(100%-140px)]
+      xl:w-[calc(100%-150px)]
     "
   >
     {/* ================= HEADING ================= */}
@@ -528,13 +528,13 @@ export default function Research() {
         <p
           className="
             m-0
-            text-[11px]
+            text-[13px]
             font-normal
             leading-[1.85]
             text-[#58656b]
 
-            sm:text-[11.5px]
-            lg:text-[12px]
+            sm:text-[13px]
+            lg:text-[14px]
           "
         >
           My research connects inquiry with leadership and organizational
@@ -611,13 +611,13 @@ export default function Research() {
         <p
           className="
             m-0
-            text-[11px]
+            text-[13px]
             font-normal
             leading-[1.85]
             text-[#58656b]
 
-            sm:text-[11.5px]
-            lg:text-[12px]
+          sm:text-[13px]
+            lg:text-[14px]
           "
         >
           I am committed to producing work that is rigorous, relevant, and
@@ -635,7 +635,7 @@ export default function Research() {
 
       <AnimatedSection
         id="areas"
-        className="scroll-mt-24 pb-12 sm:pb-14"
+        className="mt-2 pb-12 sm:pb-14"
       >
         <div className={pageContainer}>
           <h2
@@ -655,7 +655,7 @@ export default function Research() {
 
           <div
             className="
-              mt-6
+              mt-8
               grid
               grid-cols-1
               gap-4
@@ -663,7 +663,7 @@ export default function Research() {
               sm:grid-cols-2
 
               lg:grid-cols-4
-              lg:gap-5
+              lg:gap-3
             "
           >
             {areas.map(({ image, icon: Icon, title, text }) => (
@@ -713,7 +713,7 @@ export default function Research() {
                   <h3
                     className="
                       font-serif
-                      text-[17px]
+                      text-[16.5px]
                       font-semibold
                       text-[#173c50]
                     "
@@ -724,7 +724,7 @@ export default function Research() {
                   <p
                     className="
                       mt-2
-                      text-[10px]
+                      text-[12px]
                       leading-[1.6]
                       text-[#68767a]
                     "
@@ -742,7 +742,7 @@ export default function Research() {
           RESEARCH APPROACH
       ====================================================== */}
 
-      <AnimatedSection className="bg-[#fcfaf6] py-10 sm:py-12">
+      <AnimatedSection className="bg-[#fcfaf6] py-4">
         <div className={pageContainer}>
           <h2
             className="
@@ -818,7 +818,7 @@ export default function Research() {
 
                       rounded-full
 
-                      text-[10px]
+                      text-[12px]
                       font-bold
                       text-white
 
@@ -858,7 +858,7 @@ export default function Research() {
                       mt-2
 
                       font-serif
-                      text-[15px]
+                      text-[16px]
                       font-semibold
                       text-[#173c50]
                     "
@@ -870,9 +870,9 @@ export default function Research() {
                     className="
                       mx-auto
                       mt-1
-                      max-w-[175px]
+                      max-w-[195px]
 
-                      text-[9.5px]
+                      text-[11.5px]
                       leading-[1.55]
                       text-[#69767a]
                     "
@@ -890,7 +890,7 @@ export default function Research() {
           SELECTED RESEARCH INITIATIVES
       ====================================================== */}
 
-      <AnimatedSection className="py-10 sm:py-12">
+      <AnimatedSection className="py-10 ">
         <div className={pageContainer}>
           <h2
             className="
@@ -966,8 +966,8 @@ export default function Research() {
                       px-3
                       py-1
 
-                      text-[9px]
-                      font-medium
+                      text-[11px]
+                      font-semibold
                       text-[#66887d]
                     "
                   >
@@ -991,7 +991,7 @@ export default function Research() {
                     className="
                       mt-2
 
-                      text-[10px]
+                      text-[12.5px]
                       leading-[1.6]
                       text-[#677579]
                     "
@@ -999,37 +999,7 @@ export default function Research() {
                     {item.text}
                   </p>
 
-                  <Link
-                    to="/contact"
-                    className="
-                      group/link
-                      mt-4
-
-                      inline-flex
-                      items-center
-                      gap-2
-
-                      text-[10px]
-                      font-semibold
-                      text-[#5f897e]
-
-                      transition-colors
-
-                      hover:text-[#c66f4e]
-                    "
-                  >
-                    View Initiative
-
-                    <ArrowRight
-                      size={13}
-                      className="
-                        transition-transform
-                        duration-300
-
-                        group-hover/link:translate-x-1
-                      "
-                    />
-                  </Link>
+            
                 </div>
               </article>
             ))}
@@ -1041,176 +1011,287 @@ export default function Research() {
           COLLABORATION & KNOWLEDGE EXCHANGE
       ====================================================== */}
 
-      <AnimatedSection className="pb-12">
-        <div className={pageContainer}>
-          <div
+    <AnimatedSection className="pb-10 sm:pb-12 lg:pb-14">
+  <div className={pageContainer}>
+    <div
+      className="
+        group
+        grid
+        w-full
+        overflow-hidden
+        rounded-[9px]
+        border
+        border-[#dedbd3]
+        bg-[#fbfaf6]
+        shadow-[0_5px_18px_rgba(23,60,80,0.035)]
+
+        lg:grid-cols-[45.7%_54.3%]
+
+        transition-all
+        duration-500
+        ease-out
+
+        hover:shadow-[0_10px_30px_rgba(23,60,80,0.07)]
+      "
+    >
+      {/* ================= LEFT IMAGE ================= */}
+      <div
+        className="
+          relative
+          min-h-[220px]
+          overflow-hidden
+
+          sm:min-h-[270px]
+          md:min-h-[310px]
+          lg:min-h-[255px]
+        "
+      >
+        <img
+          src={collaborationBg}
+          alt="Researchers participating in a collaborative roundtable"
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            object-center
+
+            transition-transform
+            duration-[1200ms]
+            ease-out
+
+            group-hover:scale-[1.025]
+          "
+        />
+      </div>
+
+      {/* ================= RIGHT CONTENT ================= */}
+      <div
+        className="
+          relative
+          isolate
+          overflow-hidden
+
+          px-5
+          py-6
+
+          sm:px-7
+          sm:py-7
+
+          md:px-9
+          md:py-8
+
+          lg:flex
+          lg:min-h-[255px]
+          lg:items-center
+          lg:px-[38px]
+          lg:py-[18px]
+        "
+      >
+        {/* BACKGROUND IMAGE */}
+        <div
+          aria-hidden="true"
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            z-0
+
+            bg-right-bottom
+            bg-no-repeat
+
+            opacity-100
+
+            [background-size:145px_auto]
+
+            sm:[background-size:170px_auto]
+            lg:[background-size:175px_auto]
+          "
+          style={{
+            backgroundImage: `url(${collaborationBg})`,
+          }}
+        />
+
+        {/* optional soft overlay to keep text clear */}
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            z-[1]
+            bg-gradient-to-r
+            from-[#fbfaf6]
+            via-[#fbfaf6]/95
+            to-[#fbfaf6]/45
+          "
+        />
+
+        {/* CONTENT */}
+        <div
+          className="
+            relative
+            z-10
+            w-full
+            max-w-[570px]
+          "
+        >
+          {/* HEADING */}
+          <h2
             className="
-              grid
-              overflow-hidden
+              font-['Georgia']
+              text-[20px]
+              font-normal
+              leading-[1.25]
+              tracking-[-0.25px]
+              text-[#173c50]
 
-              rounded-[9px]
+              sm:text-[22px]
+              md:text-[23px]
 
-              border
-              border-[#e4ddd3]
-
-              bg-[#fbf9f4]
-
-              shadow-[0_6px_20px_rgba(23,60,80,0.04)]
-
-              lg:grid-cols-[1fr_1.08fr]
+              lg:text-[22px]
             "
           >
-            {/* IMAGE */}
+            Collaboration &amp; Knowledge Exchange
+          </h2>
 
-            <div className="group min-h-[280px] overflow-hidden">
-              <img
-                src={collaboration}
-                alt="Researchers participating in a collaborative roundtable"
+          {/* DESCRIPTION */}
+          <p
+            className="
+              mt-[7px]
+              max-w-[520px]
+
+              font-sans
+              text-[11px]
+              font-normal
+              leading-[1.6]
+              text-[#667477]
+
+              sm:text-[11.5px]
+
+              lg:text-[10.5px]
+              lg:leading-[1.55]
+            "
+          >
+            I bring together researchers, institutions, professionals, and
+            decision-makers to co-create knowledge and drive meaningful change.
+          </p>
+
+          {/* ITEMS */}
+          <div
+            className="
+              mt-5
+              space-y-[13px]
+
+              sm:mt-[20px]
+              sm:space-y-[14px]
+
+              lg:mt-[17px]
+              lg:space-y-[11px]
+            "
+          >
+            {collaborationItems.map((item, index) => (
+              <div
+                key={item.title}
                 className="
-                  h-full
-                  min-h-[280px]
-                  w-full
-                  object-cover
+                  group/item
+                  flex
+                  items-start
+                  gap-[11px]
 
-                  transition-transform
-                  duration-700
+                  transition-all
+                  duration-300
 
-                  group-hover:scale-[1.035]
+                  hover:translate-x-[3px]
                 "
-              />
-            </div>
-
-            {/* CONTENT */}
-
-            <div
-              className="
-                relative
-                overflow-hidden
-
-                px-6
-                py-8
-
-                sm:px-9
-                sm:py-9
-
-                lg:px-10
-              "
-            >
-              {/* DECORATIVE LEAF */}
-
-              <Sprout
-                size={150}
-                strokeWidth={0.55}
-                className="
-                  pointer-events-none
-
-                  absolute
-                  -bottom-8
-                  -right-5
-
-                  text-[#a6b4a6]/25
-                "
-              />
-
-              <div className="relative z-10">
-                <h2
+                style={{
+                  transitionDelay: `${index * 40}ms`,
+                }}
+              >
+                {/* CHECK CIRCLE */}
+                <div
                   className="
-                    font-serif
-                    text-[27px]
-                    font-medium
-                    text-[#173c50]
+                    mt-[1px]
+                    flex
+                    h-[21px]
+                    w-[21px]
+                    shrink-0
+                    items-center
+                    justify-center
 
-                    sm:text-[30px]
+                    rounded-full
+                    border
+                    border-[#88a49e]
+
+                    bg-[#fbfaf6]/80
+
+                    transition-all
+                    duration-300
+
+                    group-hover/item:border-[#6f958b]
+                    group-hover/item:bg-[#eef4f1]
                   "
                 >
-                  Collaboration &amp; Knowledge Exchange
-                </h2>
+                  <Check
+                    strokeWidth={1.8}
+                    className="
+                      h-[10px]
+                      w-[10px]
+                      text-[#779a91]
+                    "
+                  />
+                </div>
 
-                <p
-                  className="
-                    mt-3
-                    max-w-[550px]
+                {/* ITEM TEXT */}
+                <div className="min-w-0 pt-0">
+                  <h3
+                    className="
+                      font-['Georgia']
+                      text-[12px]
+                      font-normal
+                      leading-[1.25]
+                      text-[#183b4e]
 
-                    text-[11px]
-                    leading-[1.7]
-                    text-[#627176]
+                      transition-colors
+                      duration-300
 
-                    sm:text-[12px]
-                  "
-                >
-                  I bring together researchers, institutions, professionals,
-                  and decision-makers to co-create knowledge and drive
-                  meaningful change.
-                </p>
+                      group-hover/item:text-[#b86e51]
 
-                <div className="mt-5 space-y-4">
-                  {collaborationItems.map((item) => (
-                    <div
-                      key={item.title}
-                      className="
-                        group
-                        flex
-                        gap-3
-                      "
-                    >
-                      <div
-                        className="
-                          mt-[2px]
+                      sm:text-[12.5px]
 
-                          flex
-                          h-[23px]
-                          w-[23px]
-                          shrink-0
-                          items-center
-                          justify-center
+                      lg:text-[11.5px]
+                    "
+                  >
+                    {item.title}
+                  </h3>
 
-                          rounded-full
+                  <p
+                    className="
+                      mt-[2px]
+                      max-w-[460px]
 
-                          border
-                          border-[#78988d]
-                        "
-                      >
-                        <Check
-                          size={12}
-                          className="text-[#78988d]"
-                        />
-                      </div>
+                      font-sans
+                      text-[9.5px]
+                      font-normal
+                      leading-[1.5]
+                      text-[#6c777a]
 
-                      <div>
-                        <h3
-                          className="
-                            font-serif
-                            text-[14px]
-                            font-semibold
-                            text-[#173c50]
+                      sm:text-[10px]
 
-                            transition-colors
-
-                            group-hover:text-[#c66f4e]
-                          "
-                        >
-                          {item.title}
-                        </h3>
-
-                        <p
-                          className="
-                            mt-[2px]
-                            text-[9.5px]
-                            leading-[1.5]
-                            text-[#6c787c]
-                          "
-                        >
-                          {item.text}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                      lg:text-[9px]
+                    "
+                  >
+                    {item.text}
+                  </p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
-      </AnimatedSection>
+      </div>
+    </div>
+  </div>
+</AnimatedSection>
 
       {/* =====================================================
           FROM INQUIRY TO IMPACT
