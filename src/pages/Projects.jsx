@@ -16,7 +16,10 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 import heroPlanning from "../assets/images/img/bgproject.png";
+import rc from "../assets/images/img/RC Logo.png";
+
 import initiativeNetwork from "../assets/images/projects/initiative-network.jpg";
 import initiativeKnowledge from "../assets/images/projects/initiative-knowledge.jpg";
 import initiativeGrowth from "../assets/images/projects/initiative-growth.jpg";
@@ -105,11 +108,11 @@ function SectionTitle({ eyebrow, children }) {
   return (
     <div className="text-center">
       {eyebrow ? (
-        <p className="mb-2 font-sans text-[9px] font-semibold uppercase tracking-[0.22em] text-[#b87959] sm:text-[10px]">
+        <p className="mb-2 font-sans text-[11px] font-bold uppercase tracking-[0.22em] text-[#dc8c64] sm:text-[12px]">
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-['Georgia',serif] text-[21px] font-normal leading-[1.2] tracking-[-0.3px] text-[#173c50] sm:text-[24px] lg:text-[26px]">
+      <h2 className="font-serif text-[26px] font-normal leading-[1.2] tracking-[-0.3px] text-[#173c50] sm:text-[28px] lg:text-[30px]">
         {children}
       </h2>
     </div>
@@ -379,7 +382,7 @@ export default function Projects() {
           <SectionTitle eyebrow="My Companies">
             Organizations Built Around Purpose
           </SectionTitle>
-          <p className="mx-auto mt-3 max-w-[710px] text-center font-sans text-[10px] leading-[1.7] text-[#6e797c] sm:text-[11px]">
+          <p className="mx-auto mt-3 max-w-[710px] text-center font-sans text-[10px] leading-[1.7] text-[#484f51] sm:text-[13px]">
             I build and support organizations that align research, industry,
             institutions, and society
             <br className="hidden md:block" />
@@ -393,30 +396,30 @@ export default function Projects() {
                 transition={{ duration: 0.3 }}
                 className="flex items-center justify-center"
               >
-                <RCLogo />
+              <img src={rc} alt="RC lOGO" className="sm:h-36 sm:w-36 h-28 w-28" />
               </motion.div>
 
               <div className="text-center sm:text-left">
-                <h3 className="font-['Georgia',serif] text-[24px] font-normal leading-tight text-[#173c50] sm:text-[25px] lg:text-[27px]">
+                <h3 className="font-serif text-[26px] font-700 leading-tight text-[#173c50] sm:text-[28px] lg:text-[34px]">
                   Researcher Connect
                 </h3>
-                <p className="mt-2 font-sans text-[8.5px] font-semibold uppercase tracking-[0.15em] text-[#b99348] sm:text-[9px]">
+                <p className="mt-1 font-sans text-[8.5px] font-bold uppercase tracking-[0.15em] text-[#dc8c64] sm:text-[11px]">
                   Innovation and Impact Private Limited
                 </p>
-                <p className="mt-4 max-w-[575px] font-sans text-[10.5px] leading-[1.65] text-[#697579] sm:text-[11px]">
+                <p className="mt-2 max-w-[575px] font-sans text-[11.5px] leading-[1.65] text-[#353b3d] sm:text-[12px]">
                   A collaborative platform designed to connect researchers,
                   institutions, and professionals while supporting innovation and
                   practical impact.
                 </p>
-                <p className="mt-4 flex items-center justify-center gap-2 font-sans text-[8.5px] leading-4 text-[#788387] sm:justify-start sm:text-[9px]">
-                  <Info size={12} strokeWidth={1.5} className="text-[#7b9091]" />
+                <p className="mt-2 flex items-center justify-center gap-2 font-sans text-[8.5px] leading-4 text-[#414749] sm:justify-start sm:text-[11px]">
+                  <Info size={12} strokeWidth={1.5} className="text-[#475354]" />
                   Organization details and links can be updated with verified
                   information.
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:mt-7 lg:grid-cols-4">
+            <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:mt-7 lg:grid-cols-4">
               {organizationFeatures.map(({ icon: Icon, title, text }, index) => (
                 <motion.div
                   key={title}
@@ -430,12 +433,12 @@ export default function Projects() {
                   <Icon
                     size={34}
                     strokeWidth={1.15}
-                    className="mx-auto text-[#6e8988] transition-transform duration-300 group-hover:scale-110"
+                    className="mx-auto text-[#3d4d4c] transition-transform duration-300 group-hover:scale-110"
                   />
-                  <h4 className="mt-3 font-['Georgia',serif] text-[14px] font-normal text-[#173c50] sm:text-[15px]">
+                  <h4 className="mt-2 font-serif text-[14px] font-medium text-[#0f2937] sm:text-[18px]">
                     {title}
                   </h4>
-                  <p className="mx-auto mt-2 max-w-[170px] font-sans text-[9px] leading-[1.55] text-[#717c80]">
+                  <p className="mx-auto mt-1 max-w-[170px] font-sans text-[11px] leading-[1.55] text-[#4f595d]">
                     {text}
                   </p>
                 </motion.div>
