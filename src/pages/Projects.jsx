@@ -20,10 +20,12 @@ import { Link } from "react-router-dom";
 import heroPlanning from "../assets/images/img/bgproject.png";
 import rc from "../assets/images/img/RC Logo.png";
 
-import initiativeNetwork from "../assets/images/projects/initiative-network.jpg";
-import initiativeKnowledge from "../assets/images/projects/initiative-knowledge.jpg";
-import initiativeGrowth from "../assets/images/projects/initiative-growth.jpg";
-import collaborationCore from "../assets/images/projects/collaboration-core.jpg";
+import initiativeNetwork from "../assets/images/img/project3.png";
+import initiativeKnowledge from "../assets/images/img/project4.png";
+import initiativeGrowth from "../assets/images/img/project5.png";
+import collaborationCore from "../assets/images/img/project2.png";
+import cta from "../assets/images/img/ctaProject.png";
+
 
 const pageContainer =
   "mx-auto w-[min(1120px,calc(100%-28px))] sm:w-[min(1120px,calc(100%-40px))] lg:w-[min(1120px,calc(100%-56px))]";
@@ -121,9 +123,9 @@ function SectionTitle({ eyebrow, children }) {
 
 function DecorativeTitle({ children }) {
   return (
-    <div className="flex items-center justify-center gap-4 sm:gap-6">
+    <div className="flex items-center justify-center gap-4 sm:gap-6 sm:mb-8 mb-4">
       <span className="h-px min-w-0 flex-1 bg-[#d9c6a5]" />
-      <h2 className="shrink-0 text-center font-['Georgia',serif] text-[20px] font-normal leading-none text-[#173c50] sm:text-[22px]">
+      <h2 className="shrink-0 text-center font-serif text-[28px] font-normal leading-none text-[#173c50] sm:text-[30px]">
         {children}
       </h2>
       <span className="h-px min-w-0 flex-1 bg-[#d9c6a5]" />
@@ -131,29 +133,7 @@ function DecorativeTitle({ children }) {
   );
 }
 
-function RCLogo() {
-  return (
-    <div
-      aria-label="Researcher Connect"
-      className="relative mx-auto h-[112px] w-[128px] sm:h-[122px] sm:w-[140px]"
-    >
-      <span className="absolute left-1/2 top-1/2 h-[95px] w-[95px] -translate-x-1/2 -translate-y-1/2 rounded-full border-[2px] border-[#819c96]" />
-      <span className="absolute left-1/2 top-1/2 h-[78px] w-[105px] -translate-x-1/2 -translate-y-1/2 rotate-[18deg] rounded-[50%] border border-[#c4a05a]" />
-      <span className="absolute left-1/2 top-1/2 h-[101px] w-[74px] -translate-x-1/2 -translate-y-1/2 -rotate-[24deg] rounded-[50%] border border-[#b96f50]/75" />
 
-      <span className="absolute left-[16px] top-[29px] h-[7px] w-[7px] rounded-full bg-[#c4a05a]" />
-      <span className="absolute right-[15px] top-[42px] h-[7px] w-[7px] rounded-full bg-[#7c9a92]" />
-      <span className="absolute bottom-[21px] left-[31px] h-[6px] w-[6px] rounded-full bg-[#b96f50]" />
-      <span className="absolute bottom-[13px] right-[35px] h-[6px] w-[6px] rounded-full bg-[#c4a05a]" />
-
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="font-['Georgia',serif] text-[50px] tracking-[-0.16em] text-[#315f6b] sm:text-[54px]">
-          RC
-        </span>
-      </div>
-    </div>
-  );
-}
 
 export default function Projects() {
   const [selectedInitiative, setSelectedInitiative] = useState(null);
@@ -448,45 +428,7 @@ export default function Projects() {
         </div>
       </motion.section>
 
-      {/* ========================= VISION ========================= */}
-      <motion.section {...sectionReveal} className="py-4 sm:py-5">
-        <div className={pageContainer}>
-          <div className="relative overflow-hidden rounded-[8px] border border-[#d6ddd7] bg-gradient-to-r from-[#e4e9e3] via-[#e9ece7] to-[#dce2dc] px-5 py-5 sm:px-7 lg:px-10">
-            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-              <div className="flex items-center gap-5 sm:gap-7">
-                <motion.span
-                  whileHover={{ rotate: -5, scale: 1.05 }}
-                  className="grid h-[78px] w-[78px] shrink-0 place-items-center rounded-full bg-white/50 sm:h-[88px] sm:w-[88px]"
-                >
-                  <Sprout size={43} strokeWidth={1.05} className="text-[#76958a]" />
-                </motion.span>
-
-                <div>
-                  <p className="font-sans text-[8.5px] font-semibold uppercase tracking-[0.2em] text-[#b99348]">
-                    Vision
-                  </p>
-                  <p className="mt-2 max-w-[610px] font-['Georgia',serif] text-[17px] font-normal leading-[1.45] text-[#2f5b69] sm:text-[19px] lg:text-[20px]">
-                    To strengthen a collaborative ecosystem
-                    <br className="hidden sm:block" />
-                    where research, leadership, and innovation
-                    <br className="hidden lg:block" />
-                    contribute to sustainable progress.
-                  </p>
-                </div>
-              </div>
-
-              <a
-                href="https://www.researcherconnect.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-[33px] shrink-0 items-center justify-center self-start rounded-[3px] border border-[#456c79] bg-white/20 px-[22px] font-sans text-[9.5px] font-medium text-[#315a68] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#173c50] hover:text-white hover:shadow-md md:self-auto"
-              >
-                Visit Website
-              </a>
-            </div>
-          </div>
-        </div>
-      </motion.section>
+    
 
       {/* ========================= INITIATIVES ========================= */}
       <motion.section
@@ -517,23 +459,23 @@ export default function Projects() {
                 </div>
 
                 <div className="p-4 sm:p-5">
-                  <span className="inline-flex rounded-full bg-[#edf2ed] px-3 py-[4px] font-sans text-[8.5px] font-medium text-[#718d83]">
+                  <span className="inline-flex rounded-full bg-[#edf2ed] px-3 py-[3px] font-sans text-[11px] font-medium text-[#435851] border border-collapse border-[#d6eede]">
                     {item.tag}
                   </span>
-                  <h3 className="mt-3 font-['Georgia',serif] text-[15px] font-normal leading-[1.25] text-[#173c50] sm:text-[16px]">
+                  <h3 className="mt-3 font-serif text-[15px] font-medium leading-[1.25] text-[#112b3a] sm:text-[20px]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 min-h-[42px] font-sans text-[9.5px] leading-[1.55] text-[#717c80] sm:text-[10px]">
+                  <p className="mt-2 min-h-[42px] font-sans text-[9.5px] leading-[1.55] text-[#3b4042] sm:text-[11.5px]">
                     {item.text}
                   </p>
                   <button
                     type="button"
                     onClick={() => setSelectedInitiative(item)}
-                    className="group/link mt-3 inline-flex items-center gap-1.5 font-sans text-[9px] font-medium text-[#315a68] transition-colors hover:text-[#b86f51]"
+                    className="group/link mt-3 inline-flex items-center gap-1.5 font-sans text-[13px] font-medium text-[#223f48] transition-colors hover:text-[#b86f51]"
                   >
                     View Initiative
                     <ArrowRight
-                      size={11}
+                      size={13}
                       className="transition-transform duration-300 group-hover/link:translate-x-1"
                     />
                   </button>
@@ -542,10 +484,7 @@ export default function Projects() {
             ))}
           </div>
 
-          <p className="mt-4 flex items-center justify-center gap-1.5 text-center font-sans text-[8.5px] text-[#7b8588]">
-            <Info size={11} strokeWidth={1.5} />
-            Sample initiative content — verified details can be added later.
-          </p>
+        
         </div>
       </motion.section>
 
@@ -572,10 +511,10 @@ export default function Projects() {
                 <span className="mx-auto grid h-[50px] w-[50px] place-items-center rounded-full border border-[#8ba49b] bg-[#fbfaf8] transition-all duration-300 group-hover:bg-white">
                   <Icon size={24} strokeWidth={1.15} className="text-[#78958c]" />
                 </span>
-                <h3 className="mt-3 font-['Georgia',serif] text-[13px] font-normal text-[#173c50] sm:text-[14px]">
+                <h3 className="mt-3 font-['Georgia',serif] text-[16px] font-normal text-[#173c50] sm:text-[18px]">
                   {title}
                 </h3>
-                <p className="mx-auto mt-2 max-w-[185px] font-sans text-[8.7px] leading-[1.55] text-[#737e81] sm:text-[9px]">
+                <p className="mx-auto mt-1 max-w-[210px] font-sans text-[10.7px] leading-[1.55] text-[#393e3f] sm:text-[11px]">
                   {text}
                 </p>
               </motion.div>
@@ -600,10 +539,10 @@ export default function Projects() {
               />
 
               <div className="relative z-10 max-w-[390px]">
-                <h2 className="font-['Georgia',serif] text-[22px] font-normal leading-tight text-[#173c50] sm:text-[24px]">
+                <h2 className="font-serif text-[28px] font-normal leading-tight text-[#142e3c] sm:text-[30px]">
                   Collaboration at the Core
                 </h2>
-                <p className="mt-4 font-sans text-[10px] leading-[1.65] text-[#6b777b] sm:text-[10.5px]">
+                <p className="mt-4 font-sans text-[10px] leading-[1.65] text-[#515a5d] sm:text-[12.5px]">
                   Great initiatives are built together. I believe in aligning
                   researchers, institutions, professionals, and partners around
                   common goals to design solutions that are inclusive, practical,
@@ -615,10 +554,10 @@ export default function Projects() {
                     (item) => (
                       <p
                         key={item}
-                        className="flex items-center gap-2 font-sans text-[9.5px] text-[#667377]"
+                        className="flex items-center gap-2 font-sans text-[11.5px] text-[#30383a]"
                       >
-                        <span className="grid h-[17px] w-[17px] shrink-0 place-items-center rounded-full border border-[#89a29a]">
-                          <Check size={9} strokeWidth={1.8} className="text-[#74938a]" />
+                        <span className="grid h-[17px] w-[17px] shrink-0 place-items-center rounded-full border border-[#46544f]">
+                          <Check size={9} strokeWidth={1.8} className="text-[#4d625c]" />
                         </span>
                         {item}
                       </p>
@@ -640,47 +579,232 @@ export default function Projects() {
       </motion.section>
 
       {/* ========================= CTA ========================= */}
-      <motion.section {...sectionReveal} className="pt-1 pb-8 sm:pb-10">
-        <div className={pageContainer}>
-          <div className="relative overflow-hidden rounded-[8px] border border-[#e2d5c9] bg-gradient-to-r from-[#f3ddd0] via-[#fbf5ef] to-[#fbf7f2] px-5 py-4 sm:px-8 sm:py-5 lg:px-10">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-[128px] overflow-hidden">
-              <span className="absolute -bottom-[32px] -left-[22px] h-[105px] w-[105px] rounded-full border border-[#c67a59]" />
-              <span className="absolute -bottom-[20px] -left-[8px] h-[78px] w-[78px] rounded-full border border-[#c67a59]" />
-              <span className="absolute -bottom-[7px] left-[7px] h-[51px] w-[51px] rounded-full border border-[#c67a59]" />
-              <span
-                className="absolute left-[87px] top-[10px] h-[60px] w-[32px] opacity-65"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle, #cf7657 1px, transparent 1px)",
-                  backgroundSize: "7px 7px",
-                }}
-              />
-            </div>
+ <motion.section className="w-full py-6">
+  <div className={pageContainer}>
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      whileHover={{ y: -2 }}
+      className="
+        group
+        relative
+        w-full
+        min-h-[200px]
+        overflow-hidden
+        rounded-[10px]
+        border
+        border-[#e3d8cb]
+        bg-[#fbf7f1]
 
-            <div className="relative z-10 flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
-              <div className="md:pl-[110px]">
-                <h2 className="font-['Georgia',serif] text-[18px] font-normal text-[#b66b4d] sm:text-[20px]">
-                  Let’s Build Meaningful Initiatives Together
-                </h2>
-                <p className="mt-1.5 font-sans text-[9px] text-[#7c7774] sm:text-[9.5px]">
-                  Connect research, strategy, and people to create purposeful impact.
-                </p>
-              </div>
+        shadow-[0_4px_16px_rgba(23,60,80,0.035)]
+        transition-shadow
+        duration-300
 
+        hover:shadow-[0_10px_28px_rgba(23,60,80,0.08)]
+
+        min-[480px]:min-h-[190px]
+        sm:min-h-[180px]
+        md:min-h-[165px]
+        lg:min-h-[160px]
+        xl:min-h-[155px]
+      "
+    >
+      {/* Background Image */}
+      <motion.div
+        aria-hidden="true"
+        className="
+          absolute
+          inset-0
+
+          bg-cover
+          bg-center
+          bg-no-repeat
+
+          transition-transform
+          duration-700
+
+          sm:bg-center
+          md:bg-left
+
+          group-hover:scale-[1.005]
+        "
+        style={{
+          backgroundImage: `url(${cta})`,
+        }}
+      />
+
+      {/* Content */}
+      <div
+        className="
+          relative
+          z-10
+
+          flex
+          w-full
+          min-h-[200px]
+          items-center
+          justify-center
+
+          px-4
+          py-6
+
+          min-[480px]:min-h-[190px]
+          min-[480px]:px-5
+
+          sm:min-h-[180px]
+          sm:px-6
+
+          md:min-h-[165px]
+          md:justify-end
+          md:px-8
+
+          lg:min-h-[160px]
+          lg:px-10
+
+          xl:min-h-[155px]
+          xl:px-12
+
+          2xl:px-14
+        "
+      >
+        {/* Text Area */}
+        <div
+          className="
+            w-full
+            max-w-[620px]
+            text-center
+
+            md:mr-[1%]
+            md:w-[62%]
+
+            min-[900px]:mr-[2%]
+            min-[900px]:w-[60%]
+
+            lg:mr-[3%]
+            lg:w-[58%]
+
+            xl:mr-[4%]
+            xl:w-[56%]
+
+            2xl:mr-[5%]
+            2xl:w-[54%]
+          "
+        >
+          {/* Heading */}
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="
+              mx-auto
+              font-serif
+              font-medium
+              leading-[1.22]
+              text-[#c66f4e]
+
+              text-[20px]
+
+              min-[400px]:text-[21px]
+
+              sm:text-[23px]
+
+              md:text-[24px]
+
+              lg:text-[25px]
+
+              xl:text-[26px]
+            "
+          >
+            Let's Build a Meaningful Initiative Together
+          </motion.h2>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.18 }}
+            className="
+              mx-auto
+              mt-2
+              w-full
+              max-w-[480px]
+
+              text-center
+              text-[11px]
+              leading-[1.65]
+              text-[#68767a]
+
+              min-[480px]:text-[11.5px]
+
+              sm:text-[12px]
+            "
+          >
+            Connect research, strategy, and people to create purposeful impact.
+          </motion.p>
+
+          {/* Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.26 }}
+            className="
+              mt-4
+              flex
+              w-full
+              justify-center
+            "
+          >
+            <motion.div
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex"
+            >
               <Link
                 to="/contact"
-                className="group inline-flex min-h-[31px] shrink-0 items-center justify-center rounded-[3px] bg-[#173c50] px-6 font-sans text-[9px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#b86f51] hover:shadow-[0_8px_16px_rgba(23,60,80,0.15)]"
+                className="
+                  inline-flex
+                  min-h-[36px]
+                  min-w-[145px]
+                  items-center
+                  justify-center
+
+                  rounded-[4px]
+                  bg-[#0b3f70]
+
+                  px-5
+                  py-2
+
+                  text-center
+                  text-[11px]
+                  font-semibold
+                  text-white
+
+                  shadow-[0_3px_10px_rgba(11,63,112,0.18)]
+
+                  transition-all
+                  duration-300
+
+                  hover:bg-[#c66f4e]
+                  hover:shadow-[0_6px_16px_rgba(198,111,78,0.22)]
+
+                  sm:min-w-[150px]
+                  sm:px-6
+                "
               >
                 Start a Conversation
-                <ArrowRight
-                  size={11}
-                  className="ml-1.5 transition-transform duration-300 group-hover:translate-x-1"
-                />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </motion.section>
+      </div>
+    </motion.div>
+  </div>
+</motion.section>
 
       {/* ========================= INITIATIVE MODAL ========================= */}
       <AnimatePresence>
