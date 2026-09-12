@@ -217,13 +217,13 @@ export default function Projects() {
                 CONTENT WIDTH
                 Reference image ratio ≈ 1040 x 366
                 ===================================================== */}
-              <div
+               <div
                 className={`${pageContainer} relative z-10 flex
           min-h-[500px] items-center
           sm:min-h-[500px]
           md:min-h-[470px]
-          lg:min-h-[490px]
-          xl:min-h-[500px]`}
+          lg:min-h-[430px]
+          xl:min-h-[450px]`}
               >
                 {/* ===================================================
                   LEFT TEXT CONTENT
@@ -377,7 +377,7 @@ export default function Projects() {
 
 
       {/* ========================= ORGANIZATION ========================= */}
-      <motion.section {...sectionReveal} className="pt-10 pb-5 sm:pt-12">
+      <motion.section {...sectionReveal} className="pt-6 pb-4">
         <div className={pageContainer}>
           <SectionTitle eyebrow="My Companies">
             Organizations Built Around Purpose
