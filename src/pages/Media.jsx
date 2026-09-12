@@ -30,7 +30,7 @@ import mediaCtaBg from "../assets/images/img/mediaCta.png";
 
 const pageContainer = "mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8";
 const heading =
-  "text-center font-serif text-[25px] font-medium text-[#173c50] sm:text-[26px] lg:text-[28px]";
+  "text-center font-serif text-[19px] font-medium text-[#173c50] sm:text-[21px] lg:text-[23px]";
 
 const appearances = [
   {
@@ -126,14 +126,13 @@ function MediaCard({ item }) {
           {item.label}
         </span>
       </div>
-      <div className="p-5">
-        <h3 className="font-serif text-[16.5px] font-semibold text-[#173c50]">
+      <div className="p-4">
+        <h3 className="font-serif text-[16.5px] font-medium leading-6 text-[#173c50]">
           {item.title}
         </h3>
-        <p className="mt-2 text-[12px] leading-[1.6] text-[#68767a]">
+        <p className="mt-2 text-[12.5px] leading-[1.6] text-[#68767a]">
           {item.text}
         </p>
-     
       </div>
     </motion.article>
   );
@@ -250,42 +249,42 @@ export default function Media() {
         </div>
       </AnimatedSection>
 
-     {/* =====================================================
+      {/* =====================================================
     MEDIA OVERVIEW
-====================================================== */}
+     ====================================================== */}
 
-<AnimatedSection
-  className="
+      <AnimatedSection
+        className="
     bg-[#fffdf9]
     py-[12px]
     sm:py-[13px]
     lg:py-[15px]
   "
->
-  <div className={pageContainer}>
-    <div className="mx-auto max-w-[760px] text-center">
-      {/* Heading */}
-      <h2
-        className="
+      >
+        <div className={pageContainer}>
+          <div className="mx-auto max-w-[760px] text-center">
+            {/* Heading */}
+            <h2
+              className="
           font-serif
-          text-[26px]
+          text-[19px]
           font-medium
           leading-[1.15]
           tracking-[-0.015em]
           text-[#173c50]
-          sm:text-[27px]
-          lg:text-[28px]
+          sm:text-[21px]
+          lg:text-[23px]
         "
-      >
-        Media &amp; Public Engagement
-      </h2>
+            >
+              Media &amp; Public Engagement
+            </h2>
 
-      {/* Description */}
-      <p
-        className="
+            {/* Description */}
+            <p
+              className="
           mx-auto
           mt-[10px]
-          max-w-[470px]
+          max-w-[450px]
 
           text-[11.5px]
           font-normal
@@ -295,18 +294,18 @@ export default function Media() {
           sm:text-[12px]
           lg:text-[13px]
         "
-      >
-        Sharing ideas through thoughtful conversations, accessible
-        communication,
-        <span className="block sm:inline">
-          {" "}
-          and knowledge exchange to advance meaningful progress.
-        </span>
-      </p>
+            >
+              Sharing ideas through thoughtful conversations, accessible
+              communication,
+              <span className="block sm:inline">
+                {" "}
+                and knowledge exchange to advance meaningful progress.
+              </span>
+            </p>
 
-      {/* Quote */}
-      <div
-        className="
+            {/* Quote */}
+            <div
+              className="
           relative
           mx-auto
           mt-[8px]
@@ -317,31 +316,31 @@ export default function Media() {
           px-7
 
           sm:mt-[10px]
-          sm:px-10
+          sm:px-7
         "
-      >
-        <span
-          aria-hidden="true"
-          className="
+            >
+              <span
+                aria-hidden="true"
+                className="
             absolute
             left-0
             top-1/2
             -translate-y-[45%]
 
             font-serif
-            text-[34px]
-            font-bold
+            text-[24px]
+            font-[550]
             leading-none
             text-[#d7a64f]
 
-            sm:text-[39px]
+            sm:text-[29px]
           "
-        >
-          “
-        </span>
+              >
+                “
+              </span>
 
-        <p
-          className="
+              <p
+                className="
             font-serif
             text-[14px]
             font-medium
@@ -352,14 +351,14 @@ export default function Media() {
             sm:text-[15px]
             lg:text-[16px]
           "
-        >
-          Ideas create greater impact when they reach, engage, and inspire
-          people.
-        </p>
+              >
+                Ideas create greater impact when they reach, engage, and inspire
+                people.
+              </p>
 
-        <span
-          aria-hidden="true"
-          className="
+              <span
+                aria-hidden="true"
+                className="
             absolute
             right-0
             top-1/2
@@ -373,13 +372,13 @@ export default function Media() {
 
             sm:text-[39px]
           "
-        >
-          ”
-        </span>
-      </div>
-    </div>
-  </div>
-</AnimatedSection>
+              >
+                ”
+              </span>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
 
       {/* FEATURED MEDIA */}
       <AnimatedSection className="pt-3 sm:pt-4">
@@ -404,10 +403,10 @@ export default function Media() {
               </button>
             </div>
             <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-9">
-              <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#c66f4e]">
+              <p className="text-[12px] font-[550] uppercase tracking-[0.14em] text-[#c66f4e]">
                 Featured Media
               </p>
-              <h2 className="mt-3 font-serif text-[27px] font-medium leading-[1.08] text-[#173c50] sm:text-[30px]">
+              <h2 className="mt-2 font-serif text-[27px] font-medium leading-[1.08] text-[#173c50] sm:text-[30px]">
                 Leadership, Research &amp; Meaningful Impact
               </h2>
               <p className="mt-4 text-[12.5px] leading-[1.7] text-[#68767a]">
@@ -447,13 +446,10 @@ export default function Media() {
       </AnimatedSection>
 
       {/* MEDIA APPEARANCES */}
-      <AnimatedSection
-        id="media-appearances"
-        className=" pt-6"
-      >
+      <AnimatedSection id="media-appearances" className=" pt-6">
         <div className={pageContainer}>
           <h2 className={heading}>Media Appearances</h2>
-          <div className="mt-5 flex flex-wrap justify-center gap-2.5">
+          <div className="mt-4 flex flex-wrap justify-center gap-2.5">
             {filters.map((item) => (
               <motion.button
                 whileHover={{ y: -2 }}
@@ -506,7 +502,7 @@ export default function Media() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-serif text-[17px] font-semibold text-[#173c50]">
+                  <h3 className="font-serif text-[16.5px] font-medium leading-6 text-[#173c50]">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-[12px] leading-[1.6] text-[#68767a]">
@@ -546,10 +542,10 @@ export default function Media() {
                         <Newspaper size={19} className="text-[#66887d]" />
                       </span>
                       <span>
-                        <strong className="block font-serif text-[14px] text-[#173c50]">
+                        <strong className="block font-medium font-serif text-[15px] text-[#173c50]">
                           {title}
                         </strong>
-                        <small className="text-[10px] text-[#68767a]">
+                        <small className="text-[12px] text-[#68767a]">
                           Publication details to be updated
                         </small>
                       </span>
@@ -625,19 +621,19 @@ export default function Media() {
         </div>
       </AnimatedSection>
 
-     {/* =====================================================
+      {/* =====================================================
     CTA SECTION
 ====================================================== */}
 
-<AnimatedSection className="pb-6 pt-6">
-  <div className={pageContainer}>
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      whileHover={{ y: -2 }}
-      className="
+      <AnimatedSection className="pb-6 pt-6">
+        <div className={pageContainer}>
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ y: -2 }}
+            className="
         group
         relative
         min-h-[145px]
@@ -656,110 +652,105 @@ export default function Media() {
 
         sm:min-h-[150px]
       "
-    >
-      {/* Background image */}
-      <motion.div
-        aria-hidden="true"
-        className="
+          >
+            {/* Background image */}
+            <motion.div
+              aria-hidden="true"
+              className="
           absolute
           inset-0
           bg-cover
           bg-left-center
           bg-no-repeat
-
           transition-transform
           duration-700
-
           group-hover:scale-[1.005]
         "
-        style={{
-          backgroundImage: `url(${mediaCtaBg})`,
-        }}
-      />
+              style={{
+                backgroundImage: `url(${mediaCtaBg})`,
+              }}
+            />
 
-      {/* Content */}
-      <div
-        className="
+            {/* Content */}
+            <div
+              className="
           relative
           z-10
           flex
-          min-h-[145px]
+          min-h-[155px]
           items-center
           justify-center
 
           px-6
-          py-5
+          py-4
 
-          sm:min-h-[150px]
+          sm:min-h-[140px]
           sm:px-10
         "
-      >
-        <div
-          className="
+            >
+              <div
+                className="
             ml-auto
             mr-auto
             w-full
             max-w-[650px]
             text-center
           "
-        >
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="
+              >
+                <motion.h2
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="
               font-serif
-              text-[21px]
+              text-[17px]
               font-medium
               leading-[1.2]
               text-[#c66f4e]
 
-              sm:text-[24px]
-              lg:text-[26px]
+              sm:text-[18px]
+              lg:text-[22px]
             "
-          >
-            Interested in an Interview or Conversation?
-          </motion.h2>
+                >
+                  Interested in an Interview or Conversation?
+                </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.18 }}
-            className="
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.18 }}
+                  className="
               mx-auto
-              mt-2
-              max-w-[470px]
+              mt-1
+              max-w-[400px]
               text-center
-              text-[11px]
+              text-[13px]
               leading-[1.65]
               text-[#68767a]
 
               sm:text-[12px]
             "
-          >
-            Open to thoughtful discussions on leadership, research,
-            <span className="block sm:inline">
-              {" "}
-              innovation, and organizational impact.
-            </span>
-          </motion.p>
+                >
+                  Open to thoughtful discussions on leadership, research,
+                  <span className="block sm:inline">
+                    {" "}
+                    innovation, and organizational impact.
+                  </span>
+                </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.26 }}
-            className="mt-4 inline-block"
-          >
-            <motion.div
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <Link
-                to="/contact"
-                className="
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.26 }}
+                  className="mt-2 inline-block"
+                >
+                  <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
+                    <Link
+                      to="/contact"
+                      className="
                   inline-flex
                   min-h-[34px]
                   min-w-[150px]
@@ -784,16 +775,16 @@ export default function Media() {
                   hover:bg-[#c66f4e]
                   hover:shadow-[0_6px_16px_rgba(198,111,78,0.22)]
                 "
-              >
-                Get in Touch
-              </Link>
-            </motion.div>
+                    >
+                      Get in Touch
+                    </Link>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
         </div>
-      </div>
-    </motion.div>
-  </div>
-</AnimatedSection>
+      </AnimatedSection>
     </main>
   );
 }
