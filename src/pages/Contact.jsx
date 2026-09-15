@@ -26,7 +26,7 @@ import heroContact from "../assets/images/img/bgcontact.png";
 
 
 
-import processBackground from
+import simpleProcessBg from
   "../assets/images/img/contact2.png";
 
 import stayConnectedBg from
@@ -171,19 +171,19 @@ const processSteps = [
     icon: MessageCircle,
     title: "Share Your Enquiry",
     text: "Tell me what you would like to discuss.",
-    color: "#c9684b",
+    color: "#d56f50",
   },
   {
     icon: Target,
     title: "Align on Purpose",
     text: "Clarify the opportunity, priorities, and next steps.",
-    color: "#5f8f88",
+    color: "#5e9188",
   },
   {
     icon: Send,
     title: "Begin the Conversation",
     text: "Connect around a thoughtful path forward.",
-    color: "#c79556",
+    color: "#c79652",
   },
 ];
 
@@ -1194,147 +1194,291 @@ export default function Contact() {
 
       {/* ==================== SIMPLE PROCESS ==================== */}
 
-      <AnimatedSection className="relative py-14 sm:py-16">
-        <div
-          aria-hidden="true"
+    {/* ==================== SIMPLE PROCESS ==================== */}
+
+<AnimatedSection
+  className="
+    relative
+    isolate
+    overflow-hidden
+    border-y
+    border-[#eee7de]
+    bg-[#fcfaf6]
+    bg-cover
+    bg-center
+    bg-no-repeat
+    py-12
+
+    sm:py-14
+
+    lg:bg-right
+    lg:py-16
+  "
+  style={{
+    backgroundImage: `url(${simpleProcessBg})`,
+  }}
+>
+  
+
+  <Container>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.12 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+      }}
+      className="
+        relative
+        min-h-[270px]
+
+        sm:min-h-[285px]
+
+        lg:min-h-[290px]
+      "
+    >
+      {/* Section heading */}
+
+      <motion.div
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 18,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.5,
+              ease: [0.22, 1, 0.36, 1],
+            },
+          },
+        }}
+        className="
+          max-w-[560px]
+
+          lg:max-w-[620px]
+        "
+      >
+        <p
           className="
-            pointer-events-none
-            absolute
-            right-[-60px]
-            top-1/2
-            h-72
-            w-72
-            -translate-y-1/2
-            rounded-full
-            bg-[#edf3ee]
-            opacity-80
-            blur-sm
-            sm:right-[-20px]
+            text-[10px]
+            font-semibold
+            uppercase
+            tracking-[0.18em]
+            text-[#5d8b82]
+
+            sm:text-[11px]
           "
-        />
+        >
+          A Simple Process
+        </p>
 
-        <Container>
-          <div className="relative max-w-[1000px]">
-            <SectionHeading
-              eyebrow="A Simple Process"
-              title="From First Message to Meaningful Conversation"
-              align="left"
-            />
+        <h2
+          className="
+            mt-2
+            font-display
+            text-[29px]
+            font-medium
+            leading-[1.12]
+            text-[#173c50]
 
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
+            sm:text-[34px]
+
+            lg:text-[38px]
+          "
+        >
+          From First Message to
+          <br />
+          Meaningful Conversation
+        </h2>
+      </motion.div>
+
+      {/* Process cards */}
+
+      <motion.div
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.12,
+              delayChildren: 0.1,
+            },
+          },
+        }}
+        className="
+          mt-7
+          grid
+          grid-cols-1
+          gap-4
+
+          sm:grid-cols-2
+
+          lg:mt-8
+          lg:max-w-[76%]
+          lg:grid-cols-3
+          lg:gap-7
+
+          xl:max-w-[78%]
+        "
+      >
+        {processSteps.map(
+          ({ icon: Icon, title, text, color }, index) => (
+            <motion.article
+              key={title}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 20,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.5,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                },
+              }}
+              whileHover={{
+                y: -5,
+                borderColor: `${color}80`,
+                boxShadow:
+                  "0 14px 30px rgba(23,60,80,0.09)",
+              }}
               className="
-                mt-8
-                grid
+                group
+                relative
+                flex
+                min-h-[135px]
+                items-center
                 gap-4
-                md:grid-cols-3
+                rounded-[10px]
+                border
+                border-[#e1d8ce]
+                bg-[#fffdf9]/95
+                p-5
+                shadow-[0_5px_18px_rgba(25,55,72,0.035)]
+                backdrop-blur-[2px]
+
+                sm:min-h-[145px]
+
+                lg:min-h-[140px]
+                lg:p-5
+
+                xl:p-6
               "
             >
-              {processSteps.map(
-                ({ icon: Icon, title, text, color }, index) => (
-                  <motion.article
-                    key={title}
-                    variants={fadeUp}
-                    whileHover={{ y: -5 }}
+              {/* Icon */}
+
+              <span
+                className="
+                  grid
+                  h-[58px]
+                  w-[58px]
+                  shrink-0
+                  place-items-center
+                  rounded-full
+                  border
+                  bg-white
+                  transition-transform
+                  duration-300
+                  group-hover:-rotate-6
+                  group-hover:scale-110
+                "
+                style={{
+                  borderColor: `${color}70`,
+                }}
+              >
+                <Icon
+                  size={31}
+                  strokeWidth={1.35}
+                  style={{ color }}
+                />
+              </span>
+
+              {/* Text */}
+
+              <div className="min-w-0">
+                <h3
+                  className="
+                    font-display
+                    text-[17px]
+                    font-medium
+                    leading-tight
+                    text-[#243f4e]
+
+                    xl:text-[18px]
+                  "
+                >
+                  {title}
+                </h3>
+
+                <p
+                  className="
+                    mt-2
+                    text-[11px]
+                    leading-[1.55]
+                    text-[#6e716e]
+
+                    xl:text-[12px]
+                  "
+                >
+                  {text}
+                </p>
+              </div>
+
+              {/* Desktop connector */}
+
+              {index < processSteps.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  className="
+                    absolute
+                    left-full
+                    top-1/2
+                    z-20
+                    hidden
+                    h-px
+                    w-7
+                    -translate-y-1/2
+                    bg-[#d78465]
+
+                    lg:block
+                  "
+                >
+                  <span
                     className="
-                      group
-                      relative
-                      rounded-[9px]
-                      border
-                      border-[#e1d8ce]
-                      bg-[#fffdf9]
-                      p-5
-                      shadow-[0_6px_20px_rgba(25,55,72,0.03)]
+                      absolute
+                      right-1/2
+                      top-1/2
+                      h-2.5
+                      w-2.5
+                      -translate-y-1/2
+                      translate-x-1/2
+                      rounded-full
+                      bg-[#d47555]
+                      shadow-[0_0_0_3px_rgba(212,117,85,0.1)]
                     "
-                  >
-                    <div className="flex items-center gap-4">
-                      <span
-                        className="
-                          grid
-                          h-12
-                          w-12
-                          shrink-0
-                          place-items-center
-                          rounded-full
-                          border
-                          border-[#e4d4c9]
-                          bg-white
-                          transition-transform
-                          duration-300
-                          group-hover:scale-110
-                        "
-                      >
-                        <Icon
-                          size={23}
-                          strokeWidth={1.3}
-                          style={{ color }}
-                        />
-                      </span>
-
-                      <div>
-                        <p
-                          className="
-                            text-[9px]
-                            font-semibold
-                            uppercase
-                            tracking-[0.15em]
-                            text-[#9a8173]
-                          "
-                        >
-                          Step 0{index + 1}
-                        </p>
-
-                        <h3
-                          className="
-                            mt-1
-                            font-display
-                            text-lg
-                            text-[var(--navy)]
-                          "
-                        >
-                          {title}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <p
-                      className="
-                        mt-3
-                        text-xs
-                        leading-5
-                        text-[var(--muted)]
-                      "
-                    >
-                      {text}
-                    </p>
-
-                    {index < processSteps.length - 1 && (
-                      <span
-                        aria-hidden="true"
-                        className="
-                          absolute
-                          -right-3
-                          top-1/2
-                          z-10
-                          hidden
-                          -translate-y-1/2
-                          text-[#c9684b]
-                          md:block
-                        "
-                      >
-                        →
-                      </span>
-                    )}
-                  </motion.article>
-                )
+                  />
+                </span>
               )}
-            </motion.div>
-          </div>
-        </Container>
-      </AnimatedSection>
+            </motion.article>
+          )
+        )}
+
+        {/* Keeps final card centred at tablet width */}
+
+        <div className="hidden sm:block lg:hidden" />
+      </motion.div>
+    </motion.div>
+  </Container>
+</AnimatedSection>
 
       
 
