@@ -1110,11 +1110,21 @@ export default function Contact() {
         "
       >
         <Container>
-          <SectionHeading
-            eyebrow="Opportunities"
-            title="Ways We Can Collaborate"
-            align="left"
-          />
+            <h2
+            className="
+              mt-2
+              font-display
+              text-[28px]
+              font-medium
+              leading-[1.1]
+              text-[#173c50]
+              sm:text-[32px]
+              
+            "
+          >
+        Ways We Can Collaborate
+          </h2>
+        
 
           <motion.div
             variants={stagger}
@@ -1192,293 +1202,7 @@ export default function Contact() {
         </Container>
       </AnimatedSection>
 
-      {/* ==================== SIMPLE PROCESS ==================== */}
-
-    {/* ==================== SIMPLE PROCESS ==================== */}
-
-<AnimatedSection
-  className="
-    relative
-    isolate
-    overflow-hidden
-    border-y
-    border-[#eee7de]
-    bg-[#fcfaf6]
-    bg-cover
-    bg-center
-    bg-no-repeat
-    py-12
-
-    sm:py-14
-
-    lg:bg-right
-    lg:py-16
-  "
-  style={{
-    backgroundImage: `url(${simpleProcessBg})`,
-  }}
->
-  
-
-  <Container>
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.12 }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.1,
-          },
-        },
-      }}
-      className="
-        relative
-        min-h-[270px]
-
-        sm:min-h-[285px]
-
-        lg:min-h-[290px]
-      "
-    >
-      {/* Section heading */}
-
-      <motion.div
-        variants={{
-          hidden: {
-            opacity: 0,
-            y: 18,
-          },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 0.5,
-              ease: [0.22, 1, 0.36, 1],
-            },
-          },
-        }}
-        className="
-          max-w-[560px]
-
-          lg:max-w-[620px]
-        "
-      >
-        <p
-          className="
-            text-[10px]
-            font-semibold
-            uppercase
-            tracking-[0.18em]
-            text-[#5d8b82]
-
-            sm:text-[11px]
-          "
-        >
-          A Simple Process
-        </p>
-
-        <h2
-          className="
-            mt-2
-            font-display
-            text-[29px]
-            font-medium
-            leading-[1.12]
-            text-[#173c50]
-
-            sm:text-[34px]
-
-            lg:text-[38px]
-          "
-        >
-          From First Message to
-          <br />
-          Meaningful Conversation
-        </h2>
-      </motion.div>
-
-      {/* Process cards */}
-
-      <motion.div
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.12,
-              delayChildren: 0.1,
-            },
-          },
-        }}
-        className="
-          mt-7
-          grid
-          grid-cols-1
-          gap-4
-
-          sm:grid-cols-2
-
-          lg:mt-8
-          lg:max-w-[76%]
-          lg:grid-cols-3
-          lg:gap-7
-
-          xl:max-w-[78%]
-        "
-      >
-        {processSteps.map(
-          ({ icon: Icon, title, text, color }, index) => (
-            <motion.article
-              key={title}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 20,
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.5,
-                    ease: [0.22, 1, 0.36, 1],
-                  },
-                },
-              }}
-              whileHover={{
-                y: -5,
-                borderColor: `${color}80`,
-                boxShadow:
-                  "0 14px 30px rgba(23,60,80,0.09)",
-              }}
-              className="
-                group
-                relative
-                flex
-                min-h-[135px]
-                items-center
-                gap-4
-                rounded-[10px]
-                border
-                border-[#e1d8ce]
-                bg-[#fffdf9]/95
-                p-5
-                shadow-[0_5px_18px_rgba(25,55,72,0.035)]
-                backdrop-blur-[2px]
-
-                sm:min-h-[145px]
-
-                lg:min-h-[140px]
-                lg:p-5
-
-                xl:p-6
-              "
-            >
-              {/* Icon */}
-
-              <span
-                className="
-                  grid
-                  h-[58px]
-                  w-[58px]
-                  shrink-0
-                  place-items-center
-                  rounded-full
-                  border
-                  bg-white
-                  transition-transform
-                  duration-300
-                  group-hover:-rotate-6
-                  group-hover:scale-110
-                "
-                style={{
-                  borderColor: `${color}70`,
-                }}
-              >
-                <Icon
-                  size={31}
-                  strokeWidth={1.35}
-                  style={{ color }}
-                />
-              </span>
-
-              {/* Text */}
-
-              <div className="min-w-0">
-                <h3
-                  className="
-                    font-display
-                    text-[17px]
-                    font-medium
-                    leading-tight
-                    text-[#243f4e]
-
-                    xl:text-[18px]
-                  "
-                >
-                  {title}
-                </h3>
-
-                <p
-                  className="
-                    mt-2
-                    text-[11px]
-                    leading-[1.55]
-                    text-[#6e716e]
-
-                    xl:text-[12px]
-                  "
-                >
-                  {text}
-                </p>
-              </div>
-
-              {/* Desktop connector */}
-
-              {index < processSteps.length - 1 && (
-                <span
-                  aria-hidden="true"
-                  className="
-                    absolute
-                    left-full
-                    top-1/2
-                    z-20
-                    hidden
-                    h-px
-                    w-7
-                    -translate-y-1/2
-                    bg-[#d78465]
-
-                    lg:block
-                  "
-                >
-                  <span
-                    className="
-                      absolute
-                      right-1/2
-                      top-1/2
-                      h-2.5
-                      w-2.5
-                      -translate-y-1/2
-                      translate-x-1/2
-                      rounded-full
-                      bg-[#d47555]
-                      shadow-[0_0_0_3px_rgba(212,117,85,0.1)]
-                    "
-                  />
-                </span>
-              )}
-            </motion.article>
-          )
-        )}
-
-        {/* Keeps final card centred at tablet width */}
-
-        <div className="hidden sm:block lg:hidden" />
-      </motion.div>
-    </motion.div>
-  </Container>
-</AnimatedSection>
+   
 
       
 
@@ -1567,7 +1291,7 @@ export default function Contact() {
 
             sm:text-[34px]
 
-            lg:text-[38px]
+            lg:text-[32px]
           "
         >
           Stay Connected
@@ -1772,11 +1496,24 @@ export default function Contact() {
 
       <AnimatedSection className="py-14 sm:py-16">
         <Container>
-          <SectionHeading
-            eyebrow="Before You Write"
-            title="Helpful Information"
-            align="left"
-          />
+           <h2
+            className="
+              mt-2
+              font-display
+              text-[28px]
+              font-medium
+              leading-[1.1]
+              text-[#173c50]
+              sm:text-[32px]
+              lg:text-[28px]
+            "
+          >
+            Frequently Asked Questions
+          </h2>
+        
+          
+          
+         
 
           <div
             className="
@@ -1983,7 +1720,7 @@ export default function Contact() {
 
               sm:text-[29px]
 
-              lg:text-[31px]
+          
             "
           >
             Have an Idea Worth Exploring?
@@ -2051,47 +1788,7 @@ export default function Contact() {
               Send an Enquiry
             </motion.a>
 
-            <motion.a
-              href="/projects"
-              whileHover={{ x: 4 }}
-              whileTap={{ scale: 0.98 }}
-              className="
-                inline-flex
-                h-10
-                items-center
-                justify-center
-                gap-3
-                rounded-[5px]
-                px-5
-                text-[11px]
-                font-semibold
-                text-[#416e67]
-                transition-colors
-                duration-200
-                hover:bg-white/40
-                hover:text-[#315c55]
-                focus:outline-none
-                focus-visible:ring-4
-                focus-visible:ring-[#5d8a81]/20
-
-                min-[420px]:w-auto
-              "
-            >
-              View Projects
-
-              <motion.span
-                aria-hidden="true"
-                className="text-base"
-                animate={{ x: [0, 3, 0] }}
-                transition={{
-                  duration: 1.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                →
-              </motion.span>
-            </motion.a>
+       
           </div>
         </motion.div>
       </div>
