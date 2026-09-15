@@ -26,7 +26,7 @@ import heroContact from "../assets/images/img/bgcontact.png";
 
 
 
-import processBackground from
+import simpleProcessBg from
   "../assets/images/img/contact2.png";
 
 import stayConnectedBg from
@@ -171,19 +171,19 @@ const processSteps = [
     icon: MessageCircle,
     title: "Share Your Enquiry",
     text: "Tell me what you would like to discuss.",
-    color: "#c9684b",
+    color: "#d56f50",
   },
   {
     icon: Target,
     title: "Align on Purpose",
     text: "Clarify the opportunity, priorities, and next steps.",
-    color: "#5f8f88",
+    color: "#5e9188",
   },
   {
     icon: Send,
     title: "Begin the Conversation",
     text: "Connect around a thoughtful path forward.",
-    color: "#c79556",
+    color: "#c79652",
   },
 ];
 
@@ -1110,11 +1110,21 @@ export default function Contact() {
         "
       >
         <Container>
-          <SectionHeading
-            eyebrow="Opportunities"
-            title="Ways We Can Collaborate"
-            align="left"
-          />
+            <h2
+            className="
+              mt-2
+              font-display
+              text-[28px]
+              font-medium
+              leading-[1.1]
+              text-[#173c50]
+              sm:text-[32px]
+              
+            "
+          >
+        Ways We Can Collaborate
+          </h2>
+        
 
           <motion.div
             variants={stagger}
@@ -1192,149 +1202,7 @@ export default function Contact() {
         </Container>
       </AnimatedSection>
 
-      {/* ==================== SIMPLE PROCESS ==================== */}
-
-      <AnimatedSection className="relative py-14 sm:py-16">
-        <div
-          aria-hidden="true"
-          className="
-            pointer-events-none
-            absolute
-            right-[-60px]
-            top-1/2
-            h-72
-            w-72
-            -translate-y-1/2
-            rounded-full
-            bg-[#edf3ee]
-            opacity-80
-            blur-sm
-            sm:right-[-20px]
-          "
-        />
-
-        <Container>
-          <div className="relative max-w-[1000px]">
-            <SectionHeading
-              eyebrow="A Simple Process"
-              title="From First Message to Meaningful Conversation"
-              align="left"
-            />
-
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              className="
-                mt-8
-                grid
-                gap-4
-                md:grid-cols-3
-              "
-            >
-              {processSteps.map(
-                ({ icon: Icon, title, text, color }, index) => (
-                  <motion.article
-                    key={title}
-                    variants={fadeUp}
-                    whileHover={{ y: -5 }}
-                    className="
-                      group
-                      relative
-                      rounded-[9px]
-                      border
-                      border-[#e1d8ce]
-                      bg-[#fffdf9]
-                      p-5
-                      shadow-[0_6px_20px_rgba(25,55,72,0.03)]
-                    "
-                  >
-                    <div className="flex items-center gap-4">
-                      <span
-                        className="
-                          grid
-                          h-12
-                          w-12
-                          shrink-0
-                          place-items-center
-                          rounded-full
-                          border
-                          border-[#e4d4c9]
-                          bg-white
-                          transition-transform
-                          duration-300
-                          group-hover:scale-110
-                        "
-                      >
-                        <Icon
-                          size={23}
-                          strokeWidth={1.3}
-                          style={{ color }}
-                        />
-                      </span>
-
-                      <div>
-                        <p
-                          className="
-                            text-[9px]
-                            font-semibold
-                            uppercase
-                            tracking-[0.15em]
-                            text-[#9a8173]
-                          "
-                        >
-                          Step 0{index + 1}
-                        </p>
-
-                        <h3
-                          className="
-                            mt-1
-                            font-display
-                            text-lg
-                            text-[var(--navy)]
-                          "
-                        >
-                          {title}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <p
-                      className="
-                        mt-3
-                        text-xs
-                        leading-5
-                        text-[var(--muted)]
-                      "
-                    >
-                      {text}
-                    </p>
-
-                    {index < processSteps.length - 1 && (
-                      <span
-                        aria-hidden="true"
-                        className="
-                          absolute
-                          -right-3
-                          top-1/2
-                          z-10
-                          hidden
-                          -translate-y-1/2
-                          text-[#c9684b]
-                          md:block
-                        "
-                      >
-                        →
-                      </span>
-                    )}
-                  </motion.article>
-                )
-              )}
-            </motion.div>
-          </div>
-        </Container>
-      </AnimatedSection>
+   
 
       
 
@@ -1423,7 +1291,7 @@ export default function Contact() {
 
             sm:text-[34px]
 
-            lg:text-[38px]
+            lg:text-[32px]
           "
         >
           Stay Connected
@@ -1628,11 +1496,24 @@ export default function Contact() {
 
       <AnimatedSection className="py-14 sm:py-16">
         <Container>
-          <SectionHeading
-            eyebrow="Before You Write"
-            title="Helpful Information"
-            align="left"
-          />
+           <h2
+            className="
+              mt-2
+              font-display
+              text-[28px]
+              font-medium
+              leading-[1.1]
+              text-[#173c50]
+              sm:text-[32px]
+              lg:text-[28px]
+            "
+          >
+            Frequently Asked Questions
+          </h2>
+        
+          
+          
+         
 
           <div
             className="
@@ -1839,7 +1720,7 @@ export default function Contact() {
 
               sm:text-[29px]
 
-              lg:text-[31px]
+          
             "
           >
             Have an Idea Worth Exploring?
@@ -1907,47 +1788,7 @@ export default function Contact() {
               Send an Enquiry
             </motion.a>
 
-            <motion.a
-              href="/projects"
-              whileHover={{ x: 4 }}
-              whileTap={{ scale: 0.98 }}
-              className="
-                inline-flex
-                h-10
-                items-center
-                justify-center
-                gap-3
-                rounded-[5px]
-                px-5
-                text-[11px]
-                font-semibold
-                text-[#416e67]
-                transition-colors
-                duration-200
-                hover:bg-white/40
-                hover:text-[#315c55]
-                focus:outline-none
-                focus-visible:ring-4
-                focus-visible:ring-[#5d8a81]/20
-
-                min-[420px]:w-auto
-              "
-            >
-              View Projects
-
-              <motion.span
-                aria-hidden="true"
-                className="text-base"
-                animate={{ x: [0, 3, 0] }}
-                transition={{
-                  duration: 1.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                →
-              </motion.span>
-            </motion.a>
+       
           </div>
         </motion.div>
       </div>
