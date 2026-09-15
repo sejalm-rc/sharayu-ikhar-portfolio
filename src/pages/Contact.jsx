@@ -29,10 +29,10 @@ import heroContact from "../assets/images/img/bgcontact.png";
 import processBackground from
   "../assets/images/img/contact2.png";
 
-import connectedBackground from
+import stayConnectedBg from
   "../assets/images/img/contact3.png";
 
-import ctaBackground from
+import contactCtaBg from
   "../assets/images/img/ctaContact.png";
 
 
@@ -1336,232 +1336,293 @@ export default function Contact() {
         </Container>
       </AnimatedSection>
 
-      {/* ==================== STAY CONNECTED ==================== */}
+      
 
-      <section
+   {/* ==================== STAY CONNECTED ==================== */}
+
+<section
+  className="
+    relative
+    isolate
+    overflow-hidden
+    border-y
+    border-white/10
+    bg-[#103b59]
+    bg-cover
+    bg-center
+    bg-no-repeat
+
+    md:bg-right
+  "
+  style={{
+    backgroundImage: `url(${stayConnectedBg})`,
+  }}
+>
+
+
+  <Container>
+    <motion.div
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+      }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="
+        flex
+        min-h-[330px]
+        items-center
+        py-10
+
+        sm:min-h-[300px]
+        sm:py-11
+
+        md:min-h-[270px]
+        md:py-10
+
+        lg:min-h-[275px]
+        lg:py-12
+      "
+    >
+      <div
         className="
-          relative
-          isolate
-          overflow-hidden
-          bg-[#103954]
-          py-14
-          sm:py-16
+          w-full
+          max-w-[650px]
+
+          md:max-w-[62%]
+
+          lg:max-w-[680px]
         "
       >
-        <div
-          aria-hidden="true"
+        <motion.h2
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              },
+            },
+          }}
           className="
-            absolute
-            -right-24
-            -top-32
-            -z-10
-            h-[430px]
-            w-[430px]
-            rounded-full
-            border
-            border-white/15
-          "
-        />
+            font-display
+            text-[30px]
+            font-medium
+            leading-tight
+            text-white
 
-        <div
-          aria-hidden="true"
+            sm:text-[34px]
+
+            lg:text-[38px]
+          "
+        >
+          Stay Connected
+        </motion.h2>
+
+        <motion.p
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 18,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              },
+            },
+          }}
           className="
-            absolute
-            -right-4
-            -top-6
-            -z-10
-            h-[270px]
-            w-[270px]
-            rounded-full
-            border
-            border-white/10
+            mt-2
+            max-w-[475px]
+            text-[12px]
+            leading-[1.65]
+            text-white/80
+
+            sm:text-[13px]
+
+            lg:text-[14px]
           "
-        />
+        >
+          Follow professional updates, research conversations,
+          <br className="hidden sm:block" />
+          and new collaborations.
+        </motion.p>
 
-        <Container>
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            className="
-              grid
-              items-center
-              gap-10
-              lg:grid-cols-[1fr_0.65fr]
-            "
-          >
-            <div>
-              <motion.h2
-                variants={fadeUp}
-                className="
-                  font-display
-                  text-3xl
-                  text-white
-                  sm:text-4xl
-                "
-              >
-                Stay Connected
-              </motion.h2>
+        <motion.div
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 18,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              },
+            },
+          }}
+          className="
+            mt-6
+            grid
+            grid-cols-1
+            gap-3
 
-              <motion.p
-                variants={fadeUp}
-                className="
-                  mt-3
-                  max-w-[500px]
-                  text-xs
-                  leading-5
-                  text-white/75
-                "
-              >
-                Follow professional updates, research conversations,
-                and new collaborations.
-              </motion.p>
+            min-[430px]:grid-cols-2
 
-              <motion.div
-                variants={fadeUp}
-                className="mt-6 flex flex-wrap gap-3"
-              >
-                {[
-                  {
-                    icon: LinkedInIcon,
-                    label: "LinkedIn",
-                    href: "https://www.linkedin.com/",
-                  },
-                  {
-                    icon: ResearchIcon,
-                    label: "Research Profile",
-                    href: "#",
-                  },
-                  {
-                    icon: ResearchIcon,
-                    label: "Publications",
-                    href: "#",
-                  },
-                  {
-                    icon: MediaIcon,
-                    label: "Media",
-                    href: "#",
-                  },
-                ].map(({ icon: Icon, label, href }) => (
-                  <motion.a
-                    key={label}
-                    href={href}
-                    target={
-                      href.startsWith("http") ? "_blank" : undefined
-                    }
-                    rel={
-                      href.startsWith("http")
-                        ? "noreferrer"
-                        : undefined
-                    }
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="
-                      inline-flex
-                      min-h-9
-                      items-center
-                      gap-2
-                      rounded-[4px]
-                      border
-                      border-white/25
-                      bg-white/5
-                      px-3
-                      text-[10px]
-                      font-medium
-                      text-white
-                      backdrop-blur-sm
-                      transition-colors
-                      hover:border-white/50
-                      hover:bg-white/10
-                    "
-                  >
-                    <Icon size={14} />
-                    {label}
-                  </motion.a>
-                ))}
-              </motion.div>
-
-              <motion.p
-                variants={fadeUp}
-                className="mt-5 text-[10px] text-white/55"
-              >
-                Verified profile links can be added here.
-              </motion.p>
-            </div>
-
-            <motion.div
-              variants={fadeUp}
-              className="
-                hidden
-                items-center
-                justify-center
-                lg:flex
-              "
-            >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{
-                  duration: 35,
-                  repeat: Infinity,
-                  ease: "linear",
+            md:flex
+            md:flex-wrap
+          "
+        >
+          {[
+            {
+              icon: LinkedInIcon,
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/",
+              external: true,
+            },
+            {
+              icon: ResearchIcon,
+              label: "Research Profile",
+              href: "/research",
+            },
+            {
+              icon: ResearchIcon,
+              label: "Publications",
+              href: "/publications",
+            },
+            {
+              icon: MediaIcon,
+              label: "Media",
+              href: "/media",
+            },
+          ].map(
+            ({
+              icon: Icon,
+              label,
+              href,
+              external = false,
+            }) => (
+              <motion.a
+                key={label}
+                href={href}
+                target={external ? "_blank" : undefined}
+                rel={
+                  external
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                aria-label={`Open ${label}`}
+                whileHover={{
+                  y: -3,
+                  scale: 1.015,
+                  backgroundColor:
+                    "rgba(255,255,255,0.12)",
+                  borderColor:
+                    "rgba(255,255,255,0.75)",
+                  boxShadow:
+                    "0 9px 22px rgba(0,0,0,0.16)",
                 }}
+                whileTap={{ scale: 0.97 }}
                 className="
-                  relative
-                  grid
-                  h-44
-                  w-44
-                  place-items-center
-                  rounded-full
+                  group
+                  inline-flex
+                  min-h-[48px]
+                  w-full
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-[5px]
                   border
-                  border-white/25
+                  border-white/45
+                  bg-white/[0.025]
+                  px-4
+                  text-[11px]
+                  font-semibold
+                  text-white
+                  shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]
+                  backdrop-blur-sm
+                  outline-none
+                  transition-colors
+                  duration-200
+                  focus-visible:ring-4
+                  focus-visible:ring-white/20
+
+                  min-[430px]:justify-start
+
+                  md:w-auto
+                  md:min-w-[130px]
+
+                  lg:px-5
+                  lg:text-[12px]
                 "
               >
-                {[0, 45, 90, 135, 180, 225, 270, 315].map(
-                  (degree) => (
-                    <span
-                      key={degree}
-                      className="
-                        absolute
-                        left-1/2
-                        top-1/2
-                        h-3
-                        w-3
-                        rounded-full
-                        bg-[#d49a5a]
-                        shadow-[0_0_10px_rgba(212,154,90,0.7)]
-                      "
-                      style={{
-                        transform: `translate(-50%, -50%) rotate(${degree}deg) translateY(-86px)`,
-                      }}
-                    />
-                  )
-                )}
-
                 <span
                   className="
                     grid
-                    h-28
-                    w-28
+                    h-7
+                    w-7
+                    shrink-0
                     place-items-center
-                    rounded-full
-                    border
-                    border-white/20
-                    font-display
-                    text-4xl
                     text-white
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
                   "
-                  style={{
-                    transform: "rotate(-360deg)",
-                  }}
                 >
-                  SI
+                  <Icon size={26} />
                 </span>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </Container>
-      </section>
+
+                <span>{label}</span>
+              </motion.a>
+            )
+          )}
+        </motion.div>
+
+        <motion.p
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 12,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              },
+            },
+          }}
+          className="
+            mt-5
+            text-[11px]
+            leading-5
+            text-white/65
+
+            sm:text-xs
+          "
+        >
+          Verified profile links can be added here.
+        </motion.p>
+      </div>
+    </motion.div>
+  </Container>
+</section>
 
       {/* ==================== FAQ ==================== */}
 
@@ -1670,141 +1731,229 @@ export default function Contact() {
         </Container>
       </AnimatedSection>
 
-      {/* ==================== CTA ==================== */}
+    
 
-      <section className="pb-14 sm:pb-16">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            whileHover={{ y: -3 }}
+   {/* ==================== CTA SECTION ==================== */}<section className="bg-[#fcfaf6] pb-10 sm:pb-12 lg:pb-14">
+  <Container>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{
+        duration: 0.55,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      whileHover={{
+        y: -3,
+        boxShadow: "0 12px 30px rgba(23,60,80,0.08)",
+      }}
+      className="
+        group
+        relative
+        min-h-[215px]
+        overflow-hidden
+        rounded-[10px]
+        border
+        border-[#d4dfd6]
+        bg-[#edf3ee]
+        bg-no-repeat
+        shadow-[0_5px_18px_rgba(23,60,80,0.035)]
+
+        sm:min-h-[190px]
+
+        lg:min-h-[176px]
+      "
+      style={{
+        backgroundImage: `url(${contactCtaBg})`,
+        backgroundPosition: "right center",
+        backgroundSize: "auto 100%",
+      }}
+    >
+     
+
+ 
+
+      <div
+        className="
+          relative
+          z-10
+          flex
+          min-h-[215px]
+          items-center
+          px-5
+          py-7
+
+          sm:min-h-[190px]
+          sm:px-8
+          sm:py-6
+
+          md:px-10
+
+          lg:min-h-[176px]
+          lg:px-12
+          lg:py-5
+
+          xl:px-14
+        "
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -18 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.55,
+            delay: 0.1,
+            ease: "easeOut",
+          }}
+          className="
+            w-full
+            max-w-[560px]
+
+            sm:max-w-[520px]
+
+            lg:max-w-[540px]
+          "
+        >
+          <p
             className="
-              relative
-              isolate
-              overflow-hidden
-              rounded-[10px]
-              border
-              border-[#d9e3db]
-              bg-[#edf3ee]
-              px-6
-              py-9
-              shadow-[0_7px_25px_rgba(25,55,72,0.04)]
-              sm:px-9
-              lg:px-12
+              text-[9px]
+              font-semibold
+              uppercase
+              tracking-[0.2em]
+              text-[#5d8a81]
+
+              sm:text-[10px]
             "
           >
-            <div
-              aria-hidden="true"
+            Let’s Begin
+          </p>
+
+          <h2
+            className="
+              mt-1.5
+              font-display
+              text-[25px]
+              font-medium
+              leading-[1.1]
+              text-[#173c50]
+
+              sm:text-[29px]
+
+              lg:text-[31px]
+            "
+          >
+            Have an Idea Worth Exploring?
+          </h2>
+
+          <p
+            className="
+              mt-2
+              max-w-[360px]
+              text-[11px]
+              leading-[1.55]
+              text-[#676e6b]
+
+              sm:text-xs
+            "
+          >
+            A meaningful collaboration often begins
+            <br className="hidden sm:block" />
+            with one thoughtful conversation.
+          </p>
+
+          <div
+            className="
+              mt-4
+              flex
+              flex-col
+              items-stretch
+              gap-3
+
+              min-[420px]:flex-row
+              min-[420px]:items-center
+            "
+          >
+            <motion.a
+              href="#contact-form"
+              whileHover={{
+                y: -2,
+                scale: 1.02,
+                boxShadow:
+                  "0 9px 22px rgba(198,104,75,0.28)",
+              }}
+              whileTap={{ scale: 0.97 }}
               className="
-                absolute
-                -bottom-20
-                right-[-60px]
-                -z-10
-                h-72
-                w-72
-                rounded-full
-                bg-[#dce7df]
-                sm:right-[-20px]
+                inline-flex
+                h-10
+                items-center
+                justify-center
+                rounded-[5px]
+                bg-[#c9684b]
+                px-6
+                text-[11px]
+                font-semibold
+                text-white
+                shadow-[0_4px_12px_rgba(198,104,75,0.18)]
+                transition-colors
+                duration-200
+                hover:bg-[#b95d42]
+                focus:outline-none
+                focus-visible:ring-4
+                focus-visible:ring-[#c9684b]/25
+
+                min-[420px]:w-auto
               "
-            />
+            >
+              Send an Enquiry
+            </motion.a>
 
-            <div className="max-w-[640px]">
-              <p
-                className="
-                  text-[9px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.2em]
-                  text-[#5d8a81]
-                "
+            <motion.a
+              href="/projects"
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
+              className="
+                inline-flex
+                h-10
+                items-center
+                justify-center
+                gap-3
+                rounded-[5px]
+                px-5
+                text-[11px]
+                font-semibold
+                text-[#416e67]
+                transition-colors
+                duration-200
+                hover:bg-white/40
+                hover:text-[#315c55]
+                focus:outline-none
+                focus-visible:ring-4
+                focus-visible:ring-[#5d8a81]/20
+
+                min-[420px]:w-auto
+              "
+            >
+              View Projects
+
+              <motion.span
+                aria-hidden="true"
+                className="text-base"
+                animate={{ x: [0, 3, 0] }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
-                Let’s Begin
-              </p>
-
-              <h2
-                className="
-                  mt-2
-                  font-display
-                  text-3xl
-                  text-[var(--navy)]
-                  sm:text-4xl
-                "
-              >
-                Have an Idea Worth Exploring?
-              </h2>
-
-              <p
-                className="
-                  mt-3
-                  max-w-[550px]
-                  text-xs
-                  leading-6
-                  text-[var(--muted)]
-                "
-              >
-                A meaningful collaboration often begins with one
-                thoughtful conversation.
-              </p>
-
-              <div
-                className="
-                  mt-6
-                  flex
-                  flex-col
-                  gap-3
-                  min-[430px]:flex-row
-                  min-[430px]:items-center
-                "
-              >
-                <motion.a
-                  href="#contact-form"
-                  whileHover={{
-                    y: -2,
-                    boxShadow:
-                      "0 10px 24px rgba(198, 104, 75, 0.25)",
-                  }}
-                  whileTap={{ scale: 0.97 }}
-                  className="
-                    inline-flex
-                    min-h-10
-                    items-center
-                    justify-center
-                    rounded-[5px]
-                    bg-[#c9684b]
-                    px-6
-                    text-xs
-                    font-semibold
-                    text-white
-                    hover:bg-[#b95c40]
-                  "
-                >
-                  Send an Enquiry
-                </motion.a>
-
-                <motion.a
-                  href="/projects"
-                  whileHover={{ x: 4 }}
-                  className="
-                    inline-flex
-                    min-h-10
-                    items-center
-                    justify-center
-                    gap-2
-                    px-4
-                    text-xs
-                    font-semibold
-                    text-[#5d8a81]
-                  "
-                >
-                  View Projects
-                  <span aria-hidden="true">→</span>
-                </motion.a>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </section>
+                →
+              </motion.span>
+            </motion.a>
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
+  </Container>
+</section>
     </main>
   );
 }
