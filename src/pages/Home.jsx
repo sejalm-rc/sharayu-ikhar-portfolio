@@ -16,7 +16,9 @@ import {
   BookOpen,
   Award,
 } from "lucide-react";
-import homeBg from "../assets/images/img/homeBG.png";
+// import homeBg from "../assets/images/img/homeBG.png";
+ import homeBg from "../assets/images/img/bghomee.png";
+
 import about from "../assets/images/img/home2.png"
 import researchCollaborationImage from "../assets/images/img/work1.png"
 import dataDecisionImage from "../assets/images/img/work2.png"
