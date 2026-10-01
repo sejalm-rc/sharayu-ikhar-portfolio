@@ -222,7 +222,7 @@ export default function Footer() {
             Quick Links
           </h2>
 
-          <div className="mt-5 flex flex-col gap-3">
+          <div className="mt-5 flex flex-col gap-2">
             <Link to="/about" className={linkStyle}>
               About Me
             </Link>
